@@ -8,11 +8,11 @@ This is a server plus client base programme, therefore, you have to run it with 
 Database Configuration
 
 3) Locate  file " everblaz_minstrument.sql"
-4) Import that �.sql� file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while  name my database
+4) Import that .sql file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while  name my database
 " everblaz_minstrument ", therefore, it is advisable to name your same way,
 5) Once done you should see list of table understand you database, A typical example  is "category_group"
 
-Note: please locate � config� file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than everblaz_etech
+Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than everblaz_etech
 
 6) Please locate this line
 @mysql_connect ("localhost", "root", "")
