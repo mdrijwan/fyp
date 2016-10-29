@@ -23,18 +23,18 @@ for ($i = 0; $i < $n; $i++) {
 <body>
 <table width="750" border="0" align="center" cellpadding="0" cellspacing="1" class="graybox">
   <tr>
-    <td colspan="2"><img src="../../images/logo.png"></td>
+    <td colspan="2"><img src="../../images/rmslogo.jpg"></td>
   </tr>
   <tr>
     <td width="150" valign="top" class="navArea"><p>&nbsp;</p>
-      <a href="<?php echo WEB_ROOT; ?>admin/" class="leftnav">Home</a> 
+      <a href="<?php echo WEB_ROOT; ?>admin/" class="leftnav">Home</a>
 	  <a href="<?php echo WEB_ROOT; ?>admin/category/" class="leftnav">Category</a>
-      
-    
-      
-	  <a href="<?php echo WEB_ROOT; ?>admin/product/" class="leftnav">Product</a> 
-	  <a href="<?php echo WEB_ROOT; ?>admin/order/?status=Paid" class="leftnav">Order</a> 
-	  
+
+
+
+	  <a href="<?php echo WEB_ROOT; ?>admin/product/" class="leftnav">Product</a>
+	  <a href="<?php echo WEB_ROOT; ?>admin/order/?status=Paid" class="leftnav">Order</a>
+
 	  <a href="<?php echo WEB_ROOT; ?>admin/user/" class="leftnav">User</a>
         <a href="<?php echo WEB_ROOT; ?>admin/shipping/" class="leftnav">Shipping Cost</a>
         <a href="<?php echo WEB_ROOT; ?>admin/edit_shipment/" class="leftnav">Edit Shipping Cost</a>
@@ -47,7 +47,7 @@ for ($i = 0; $i < $n; $i++) {
         <tr>
           <td>
 <?php
-require_once $content;	 
+require_once $content;
 ?>
           </td>
         </tr>
