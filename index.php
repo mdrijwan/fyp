@@ -12,13 +12,13 @@
 		<!----//webfonts---->
 		<!-- Owl Carousel Assets -->
 		<link href="css/owl.carousel.css" rel="stylesheet">
-		<script src="js/jquery-1.9.1.min.js"></script> 
+		<script src="js/jquery-1.9.1.min.js"></script>
 		     <!-- Owl Carousel Assets -->
 		    <!-- Prettify -->
 		    <script src="js/owl.carousel.js"></script>
 		        <script>
 		    $(document).ready(function() {
-		
+
 		      $("#owl-demo").owlCarousel({
 		        items : 4,
 		        lazyLoad : true,
@@ -30,7 +30,7 @@
 			    pagination : false,
     			paginationNumbers: false,
 		      });
-		
+
 		    });
 		    </script>
 		   <!-- //Owl Carousel Assets -->
@@ -66,9 +66,9 @@
 						<span  onclick="location.href='index.php';"> </span>
 						<a class="logo" href="product.php"> <img src="images/rmslogo.jpg" title="Rijwan Music Store" /></a>
 					  <p>Welcome aboard! explore the amazing world of RMS!</p>
-					<a class="bigbtn popup-with-zoom-anim" href="#small-dialog" href="#"> Enter RMS</a>	
-                        
-                        
+					<a class="bigbtn popup-with-zoom-anim" href="#small-dialog" href="#"> Enter RMS</a>
+
+
                         <!--<a class="bigbtn popup-with-zoom-anim" href="#small-dialog" href="#"> Download</a>-->
 					</div>
 					<div class="clear"> </div>
@@ -83,7 +83,7 @@
 										<p>We offer  free shipping (on almost everything) from the biggest online selection of musical instruments and equipment including guitars, basses, amps & effects, keyboards & MIDI, drums & percussion, live sound, DJ, microphones, recording, band & orchestra, Folk Instruments, accessories, and more. </p>
 										<ul>
 											<li><a class="iphone" href="product.php"> </a></li>
-											
+
 										</ul>
 						  			</div>
 								</div>
@@ -93,8 +93,8 @@
 			<div class="content">
 				<div class="wrap">
 				<!----start-img-cursual---->
-				
-					   
+
+
 				<!----//End-img-cursual---->
 				<!---start-get-download-link----><!---//End-get-download-link---->
 				<!----start-divice-features---->
@@ -141,4 +141,3 @@
 		<!----//End-wrap---->
 	</body>
 </html>
-

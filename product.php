@@ -13,7 +13,7 @@ require_once 'library/cart-functions.php';
 
 
 
- 
+
  $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
@@ -38,14 +38,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <head>
-<title>Free Smart Store Website Template | Home :: w3layouts</title>
+<title>Rijwan Music Store | Products</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
@@ -83,13 +83,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="languages" title="language">
 	    	<div id="language" class="wrapper-dropdown" tabindex="1">EN
 						<strong class="opencart"> </strong>
-						<ul class="dropdown languges">					
+						<ul class="dropdown languges">
 							 <li>
-							 	<a href="#" title="Français">
+							 	<a href="#" title="English">
 									<span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
 								</a>
 							 </li>
-								
+
 				   </ul>
 		     </div>
 		     <script type="text/javascript">
@@ -104,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -141,7 +141,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -166,19 +166,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <ul id="dc_mega-menu-orange" class="dc_mm-orange">
 		 <li><a href="index.php">Home</a></li>
     <li><a href="product.php">Products</a>
- 
+
     <ul>
-         <?php 
+         <?php
 		while ($row = dbFetchAssoc($result))// start while category main
 
 		{
 			extract($row); // this eliminate  hold variable for database data example $group_id=$row["group_id"];
 	//Display all group name fetch from database<ul>
-         
+
 		?>
       <li><a href="product.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
+           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
 	        FROM category_type WHERE type_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
@@ -187,7 +187,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        extract($row1);
 	           ?>
           <li><a href="product.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
-   
+
             <?php
 		       }
             ?>
@@ -197,8 +197,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
     ?>
     </ul>
-    
-   
+
+
   </li>
   <!--<li><a href="products.html">Top Brands</a>
     <ul>
@@ -214,7 +214,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <li><a href="#">Brand Name 10</a></li>
     </ul>
   </li>-->
- 
+
   <li><a href="about.php">About</a></li>
    <li><a href="orderstatus.php">Order Status</a></li>
   <li><a href="faq.php">FAQS</a></li>
@@ -223,7 +223,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </ul>
 </div>
 	<div class="header_bottom">
-		
+
 			 <div class="header_bottom_right_images">
 		   <!-- FlexSlider -->
               <section class="slider" style="width:800px; ">
@@ -239,7 +239,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- FlexSlider -->
 	    </div>
 	  <div class="clear"></div>
-  </div>	
+  </div>
 </div>
  <div class="main">
     <div class="content">
@@ -256,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     				<option>Lowest Price</option>
     				<option>Lowest Price</option>
     				<option>Lowest Price</option>
-    				<option>In Stock</option>  				   				
+    				<option>In Stock</option>
     			</select>
     		</p>
     		</div>
@@ -268,7 +268,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     				<option>12</option>
     				<option>16</option>
     				<option>20</option>
-    				<option>In Stock</option>  				   				
+    				<option>In Stock</option>
     			</select>
     		</p>
     		</div>
@@ -283,106 +283,106 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     		<div class="clear"></div>
     	</div>-->
 	      <div class="section group">
-         
+
  <?php
 $productsPerRow = 4;
 $productsPerPage = 5;
 $sql = "SELECT pd_id,cat_id,pd_name,pd_description, pd_price,pd_image,pd_thumbnail,pd_thumbnail_L, pd_qty ,pd_code,pd_dimension,pd_boardtype,pd_controllertype,pd_pcbtype,pd_support1,pd_support2,pd_support3,pd_spec1,pd_spec2,pd_spec3,pd_spec4,pd_spec5,pd_spec6,pd_spec7,pd_spec8,pd_spec9,pd_spec10,pd_bulletsymbol,pd_companyname,pd_seller
-		FROM product_list c WHERE cat_id = '$catId'	
+		FROM product_list c WHERE cat_id = '$catId'
 		ORDER BY pd_id";
-		
-	
-		
+
+
+
 $result     = mysql_query(getPagingQuery($sql, $productsPerPage));
 $pagingLink = getPagingLink($sql, $productsPerPage, "c=$catId");
 $numProduct = dbNumRows($result);
 
 // the product images are arranged in a table. to make sure
 // each image gets equal space set the cell width here
- 
- ?> 
-   
-<?php   
+
+ ?>
+
+<?php
 if ($numProduct > 0 ) {
 
 	$i = 0;
-		
-		
+
+
 while ($row = mysql_fetch_assoc($result))// start while category main
 		{
-			extract($row); 
-			
-					
+			extract($row);
+
+
 			if ($i % $productsPerRow == 0)
 	          {
-?>    
-				
-                
+?>
+
+
 <?php	      }//End Total Row to Display Div Grid
-?>               <div class="grid_1_of_4 images_1_of_4"> 
+?>               <div class="grid_1_of_4 images_1_of_4">
 					 <a href="details.php<?php echo "?c=$cat_id&&p=$pd_id";  ?>"><img src="<?php echo   WEB_ROOT . 'images/product/' .$pd_image; ?>" alt="" /></a>
 					 <h2><?php echo $pd_name; ?></h2>
 					 <p> <?php echo $pd_spec1; ?></p>
 					 <p><!--<span class="strike"><?php echo $pd_price; ?></span>--><span class="price">RM: <?php echo $pd_price; ?></span></p>
 					  <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="details.php<?php echo "?c=$cat_id&&p=$pd_id";  ?>" class="cart-button">Add to Cart</a></span> </div>
 				     <div class="button"><span><a href="details.php<?php echo "?c=$cat_id&&p=$pd_id";  ?>" class="details">Details</a></span></div>	</div>
-<?php                   
+<?php
     $i += 1;
-	
-		} 
-		if ($i % $productsPerRow > 0) 
+
+		}
+		if ($i % $productsPerRow > 0)
 		     {
-?>          
-                
-<?php 
+?>
+
+<?php
 		     }
-		
+
 }
 
 else {
-	
+
 	echo "No Product in this category";
 }
 ?>
-        
- 
-				
+
+
+
             </div>
 
             <div class="content_bottom">
     		<div class="heading">
     		<h3>Products</h3>
     		</div>
-    		
+
     		<div class="page-no">
-        
+
     			<p>Result Pages:<ul>
     				<li><?php echo $pagingLink; ?></li>
-    				
+
     				</ul></p>
     		</div>
     		<div class="clear"></div>
     	</div>
-			
-			
-			
+
+
+
     </div>
  </div>
 </div>
    <div class="footer">
-   	  <div class="wrapper">	
+   	  <div class="wrapper">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Follow Us</h4>
 						<div class="social-icons">
-							
+
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
 							    <!--  <li class="googleplus"><a href="#" target="_blank"> </a></li>-->
 							      <li class="contact"><a href="#" target="_blank"> </a></li>
 							      <div class="clear"></div>
-                                  <br> <br> <br> <br> 
+                                  <br> <br> <br> <br>
 						     </ul>
    	 					</div>
 					</div>
@@ -391,19 +391,19 @@ else {
 						<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="faq.php">Customer Service</a></li>
-						
+
 						<li><a href="contact.php"><span>Contact Us</span></a></li>
-						
+
 						</ul>
-                        
-                        
+
+
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Order</h4>
 						<ul>
-							
+
 							<li><a href="cart.php?action=view">View Cart</a></li>
-							
+
 							<li><a href="orderstatus.php">Track My Order</a></li>
 							<li><a href="faq.php">Help</a></li>
 						</ul>
@@ -412,10 +412,10 @@ else {
 					<h4>Contact</h4>
 						<ul>
 							<li><font color="#CCCCCC">+60-11-39866690</font></li>
-							
+
                             <li><font color="#CCCCCC">sales@rms.com</font></li>
 						</ul>
-						
+
 				</div>
 			</div>
 			<div class="copy_right">
@@ -430,12 +430,12 @@ else {
 	  			containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 	 		};
 			*/
-			
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
+
 		});
 	</script>
     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
@@ -456,4 +456,3 @@ else {
 							  </script>
 </body>
 </html>
-
