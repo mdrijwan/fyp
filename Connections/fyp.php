@@ -6,5 +6,5 @@ $hostname_fyp = "localhost";
 $database_fyp = "everblaz_minstrument";
 $username_fyp = "root";
 $password_fyp = "";
-$fyp = mysql_pconnect($hostname_fyp, $username_fyp, $password_fyp) or trigger_error(mysql_error(),E_USER_ERROR); 
+$fyp = mysql_pconnect($hostname_fyp, $username_fyp, $password_fyp) or trigger_error(mysql_error(),E_USER_ERROR);
 ?>
