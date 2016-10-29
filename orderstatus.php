@@ -10,7 +10,7 @@ require_once 'library/common.php';
 
 require_once 'library/cart-functions.php';
 
- 
+
  $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
@@ -37,7 +37,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script> 
+<script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/nav-hover.js"></script>
 <script type="text/javascript">
@@ -71,13 +71,13 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 	     <div class="languages">
 	    	<div id="language" class="wrapper-dropdown" tabindex="1">EN
 						<strong class="opencart"> </strong>
-						<ul class="dropdown languges">					
+						<ul class="dropdown languges">
 							 <li>
 							 	<a href="#" title="Français">
 									<span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
 								</a>
 							 </li>
-										
+
 				   </ul>
 	       </div>
 		     <script type="text/javascript">
@@ -92,7 +92,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -129,7 +129,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -150,26 +150,26 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 	   </div>
 	 <div class="clear"></div>
    </div>
-	
-    
-    
+
+
+
     <div class="menu">
 	  <ul id="dc_mega-menu-orange" class="dc_mm-orange">
 		 <li><a href="index">Home</a></li>
     <li><a href="product.php">Products</a>
- 
+
     <ul>
-         <?php 
+         <?php
 		while ($row = dbFetchAssoc($result))// start while category main
 
 		{
 			extract($row); // this eliminate  hold variable for database data example $group_id=$row["group_id"];
 	//Display all group name fetch from database<ul>
-         
+
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
+           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
 	        FROM category_type WHERE type_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
@@ -178,7 +178,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 		        extract($row1);
 	           ?>
           <li><a href="index.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
-   
+
             <?php
 		       }
             ?>
@@ -187,10 +187,10 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
       <?php
 		}
     ?>
-   
+
     </ul>
   </li>
- 
+
    <li><a href="about.php">About</a></li>
   <li><a href="orderstatus.php">Order Status</a></li>
   <li><a href="faq.php">FAQS</a></li>
@@ -202,51 +202,51 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 
  <div class="main">
     <div class="content">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
        <!--START BODY ELSE--><form Method ="POST" Action ="" name="frmStatus" id="frmStatus">
 
 
 
 
- <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" >  
+ <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" >
  <tr>
- <td colspan="2" align="left" bgcolor="#CCCCCC"><font color="#000099"><b>Enter Order Information</b></font></td>  
+ <td colspan="2" align="left" bgcolor="#CCCCCC"><font color="#000099"><b>Enter Order Information</b></font></td>
  </tr>
-<tr> 
+<tr>
 
             <td width="250px"  >Invoice ID /Order ID</td>
             <td ><input name="txtOrderID" type="text" class="box" id="txtOrderID" size="30"  maxlength="10" />
-            
-            
-            
+
+
+
             </td>
              </tr>
-          
-            
-            
+
+
+
             <td width="250px"  >Your First Name</td>
             <td ><input name="txtFirstName" type="text" class="box" id="txtFirstName" size="30"  />
-            </td>   
-            
-            
+            </td>
+
+
         </tr>
     </table>
-  
-    <p align="center"> 
+
+    <p align="center">
         <input class="box" name="btnStep1" type="submit" id="btnstatur" value="Proceed &gt;&gt;">
     </p>
 </form>
 <?php
-if ( isset( $_POST['btnStep1'] ) ) {  
+if ( isset( $_POST['btnStep1'] ) ) {
 
 require_once 'include/getorderstatus.php';
 
@@ -256,11 +256,11 @@ require_once 'include/getorderstatus.php';
 
 ?>
 
-    
-    
-    
-    
- 
+
+
+
+
+
     	 <!--<div class="login_panel" >
         	<h3>Existing Customers</h3>
         	<p>Sign in with the form below.</p>
@@ -271,7 +271,7 @@ require_once 'include/getorderstatus.php';
                  <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
                     <div class="buttons"><div><button class="grey">Sign In</button></div></div>
                     </div>-->
-               
+
     	<!--<div class="register_account">
     		<h3>Register New Account</h3>
     		<form>
@@ -283,7 +283,7 @@ require_once 'include/getorderstatus.php';
 		    			 </td>
 		    			<td><div><input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></div>
 		    			<div><select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
-		            <option value="null">Select a Country</option>         
+		            <option value="null">Select a Country</option>
 		            <option value="AX">Åland Islands</option>
 		            <option value="AF">Afghanistan</option>
 		            <option value="AL">Albania</option>
@@ -478,38 +478,38 @@ require_once 'include/getorderstatus.php';
 		            <option value="ST">Sao Tome and Principe</option>
 		            <option value="SA">Saudi Arabia</option>
 		            <option value="SN">Senegal</option>
-		         </select></div>		        
+		         </select></div>
 		          <div><input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'City';}"></div>
 		           <div>
 		          	<input type="text" value="" class="code"> - <input type="text" value="" class="number">
 		          		<p>Country Code + Phone Number</p>
 		          </div>
 		    	</td>
-		    </tr> 
-		    </tbody></table> 
+		    </tr>
+		    </tbody></table>
 		   <div class="search"><div><button class="grey">Create Account</button></div></div>
 		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
 		    <div class="clear"></div>
 		    </form>
-    	</div>-->  	
+    	</div>-->
        <div class="clear"></div>
     </div>
  </div>
 </div>
    <div class="footer">
-   	  <div class="wrapper">	
+   	  <div class="wrapper">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Follow Us</h4>
 						<div class="social-icons">
-							
+
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
 							    <!--  <li class="googleplus"><a href="#" target="_blank"> </a></li>-->
 							      <li class="contact"><a href="#" target="_blank"> </a></li>
 							      <div class="clear"></div>
-                                  <br> <br> <br> <br> 
+                                  <br> <br> <br> <br>
 						     </ul>
    	 					</div>
 					</div>
@@ -518,19 +518,19 @@ require_once 'include/getorderstatus.php';
 						<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="faq.php">Customer Service</a></li>
-						
+
 						<li><a href="contact.php"><span>Contact Us</span></a></li>
-						
+
 						</ul>
-                        
-                        
+
+
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Order</h4>
 						<ul>
-							
+
 							<li><a href="cart.php?action=view">View Cart</a></li>
-							
+
 							<li><a href="orderstatus.php">Track My Order</a></li>
 							<li><a href="faq.php">Help</a></li>
 						</ul>
@@ -538,15 +538,15 @@ require_once 'include/getorderstatus.php';
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><font color="#CCCCCC">+60-123-456789</font></li>
-							<li><font color="#CCCCCC">+00-123-000000</font></li>
-                            <li><font color="#CCCCCC">sales@musicalholicone.com</font></li>
+              <li><font color="#CCCCCC">+60-113-9866690</font></li>
+							<li><font color="#CCCCCC">+60-123-000000</font></li>
+                            <li><font color="#CCCCCC">sales@rms.com</font></li>
 						</ul>
-						
+
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Compant Name © All rights Reseverd | Musical Shopaholic   </p>
+				<p>Rijwan Music Store © All rights Reseverd | RMS   </p>
 		   </div>
      </div>
     </div>
@@ -557,15 +557,14 @@ require_once 'include/getorderstatus.php';
 	  			containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 	 		};
 			*/
-			
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
+
 		});
 	</script>
     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 </body>
 </html>
-

@@ -25,25 +25,25 @@ if (!defined('WEB_ROOT')) {
 
 
 $sqldetails = "SELECT pd_id,cat_id, pd_name,pd_code, pd_description, pd_price, pd_qty,pd_weight, pd_image, pd_thumbnail, pd_date,pd_dimension,pd_detaildescription,pd_spec1,pd_spec2
-		FROM product_list p WHERE  pd_id = '$pdId'	
+		FROM product_list p WHERE  pd_id = '$pdId'
 		ORDER BY pd_id";
 		$resultdetails     = mysql_query($sqldetails);
 
 while ($rowdetails = mysql_fetch_assoc($resultdetails ))// start while category main
 		{
 			extract($rowdetails);
-			
+
 		}
-		
-//Get Session ID and Show How many Item Add to Cart		
-		
- $sid = session_id();					
+
+//Get Session ID and Show How many Item Add to Cart
+
+ $sid = session_id();
 	$sql4 = "SELECT cart_qty
 	        FROM tbl_cart
 			WHERE ct_session_id = '$sid'";
-				$result4  = mysql_query($sql4);	
+				$result4  = mysql_query($sql4);
 				$row4 = mysql_fetch_assoc($result4);
-				 
+
 
 ?>
 
@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/nav-hover.js"></script>
 <script type="text/javascript">
@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<a href="#"><img src="images/rmslogo.jpg" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-			
+
 			    <div class="shopping_cart">
 					<div class="cart">
 						<a href="cart.php?action=view" title="View my shopping cart" rel="nofollow">
@@ -98,13 +98,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	     <div class="languages">
 	    	<div id="language" class="wrapper-dropdown" tabindex="1">EN
 						<strong class="opencart"> </strong>
-						<ul class="dropdown languges">					
+						<ul class="dropdown languges">
 							 <li>
 							 	<a href="#" title="Français">
 									<span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
 								</a>
 							 </li>
-											
+
 				   </ul>
 		     </div>
 		     <script type="text/javascript">
@@ -119,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -156,7 +156,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
-					});	
+					});
 				}
 			}
 
@@ -181,19 +181,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <ul id="dc_mega-menu-orange" class="dc_mm-orange">
 		 <li><a href="index.php">Home</a></li>
     <li><a href="product.php">Products</a>
- 
+
     <ul>
-         <?php 
+         <?php
 		while ($row = dbFetchAssoc($result))// start while category main
 
 		{
 			extract($row); // this eliminate  hold variable for database data example $group_id=$row["group_id"];
 	//Display all group name fetch from database<ul>
-         
+
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
+           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
 	        FROM category_type WHERE type_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
@@ -202,7 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		        extract($row1);
 	           ?>
           <li><a href="index.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
-   
+
             <?php
 		       }
             ?>
@@ -211,7 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <?php
 		}
     ?>
-   
+
     </ul>
   </li>
  <li><a href="about.php">About</a></li>
@@ -226,25 +226,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
- <?php include"productdetails.php" ?> 
+ <?php include"productdetails.php" ?>
 
 
 
 
   <div class="footer">
-   	  <div class="wrapper">	
+   	  <div class="wrapper">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Follow Us</h4>
 						<div class="social-icons">
-							
+
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
 							    <!--  <li class="googleplus"><a href="#" target="_blank"> </a></li>-->
 							      <li class="contact"><a href="#" target="_blank"> </a></li>
 							      <div class="clear"></div>
-                                  <br> <br> <br> <br> 
+                                  <br> <br> <br> <br>
 						     </ul>
    	 					</div>
 					</div>
@@ -253,19 +253,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="faq.php">Customer Service</a></li>
-						
+
 						<li><a href="contact.php"><span>Contact Us</span></a></li>
-						
+
 						</ul>
-                        
-                        
+
+
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Order</h4>
 						<ul>
-							
+
 							<li><a href="cart.php?action=view">View Cart</a></li>
-							
+
 							<li><a href="orderstatus.php">Track My Order</a></li>
 							<li><a href="faq.php">Help</a></li>
 						</ul>
@@ -273,18 +273,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><font color="#CCCCCC">+60-123-456789</font></li>
-							<li><font color="#CCCCCC">+00-123-000000</font></li>
-                            <li><font color="#CCCCCC">sales@musicalholicone.com</font></li>
+              <li><font color="#CCCCCC">+60-113-9866690</font></li>
+							<li><font color="#CCCCCC">+60-123-000000</font></li>
+                            <li><font color="#CCCCCC">sales@rms.com</font></li>
 						</ul>
-						
+
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Compant Name © All rights Reseverd | Musical Shopaholic   </p>
+				<p>Rijwan Music Store © All rights Reseverd | RMS   </p>
 		   </div>
      </div>
     </div>
 </body>
 </html>
-
