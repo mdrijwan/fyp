@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 09, 2015 at 03:53 PM
--- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- Host: localhost
+-- Generation Time: Oct 29, 2016 at 11:31 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `everblaz_minstrument`
@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `category_group`
 --
 
-CREATE TABLE IF NOT EXISTS `category_group` (
+CREATE TABLE `category_group` (
   `cat_id` int(10) NOT NULL,
-`group_id` int(11) unsigned NOT NULL,
+  `group_id` int(11) UNSIGNED NOT NULL,
   `group_name` varchar(200) NOT NULL,
   `group_description` varchar(255) NOT NULL,
   `group_image` varchar(45) NOT NULL,
   `group_set` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category_group`
@@ -54,21 +54,31 @@ INSERT INTO `category_group` (`cat_id`, `group_id`, `group_name`, `group_descrip
 -- Table structure for table `category_type`
 --
 
-CREATE TABLE IF NOT EXISTS `category_type` (
-`cat_id` int(10) unsigned NOT NULL,
+CREATE TABLE `category_type` (
+  `cat_id` int(10) UNSIGNED NOT NULL,
   `type_id` int(11) NOT NULL,
   `type_name` varchar(200) NOT NULL,
   `type_description` varchar(200) NOT NULL,
   `type_image` varchar(200) NOT NULL,
   `type_link` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category_type`
 --
 
 INSERT INTO `category_type` (`cat_id`, `type_id`, `type_name`, `type_description`, `type_image`, `type_link`) VALUES
-(54, 15, 'Keyboard Stands', 'Support your instrument with the perfect keyboard stand. zZounds has X-stands, Z-stands, tabletop stands, and cabinet-style stands to fit your keyboard.', '', '');
+(54, 15, 'Keyboard Stands', 'Support your instrument with the perfect keyboard stand. zZounds has X-stands, Z-stands, tabletop stands, and cabinet-style stands to fit your keyboard.', '', ''),
+(55, 16, 'Acoustic Guitars', 'We stock a wide range of acoustic, electro-acoustic and classical guitars, from leading brands.', '', ''),
+(56, 16, 'Electric Guitars', 'From beginner to pro, shop for your next electric guitar at Dawsons Music. We stock a huge range online and in-store, including ever-popular solid-body guitars, to hollow-body guitars and archtops.', '', ''),
+(57, 16, 'Bass Guitars', 'RMS has a wide variety of Bass Guitars. Fretless and Acoustic basses are also stocked, as are left-handed basses.', '', ''),
+(58, 15, 'Digital Pianos', 'Digital Pianos are electronic musical instruments played using a keyboard. Modern digital pianos faithfully replicate the feel and sound of traditional acoustic pianos.', '', ''),
+(60, 18, 'MIDI Interfaces', 'A dedicated MIDI interface is essential in today''s digital world for making vintage and new gear speak to each other.', '', ''),
+(61, 18, 'Audio Interfaces', 'Audio Interfaces are an integral part of today''s modern studios, where the computer is often the engine powering the entire process. ', '', ''),
+(63, 17, 'Microphones', 'Whether you need a small-diaphragm condenser microphone, a cardioid dynamic microphone, or dual diaphragm valve microphone, RMS has the microphone for you.', '', ''),
+(64, 17, 'Digital Recorders', 'The rapid advances in digital technology have ensured that recorders of all types are commonplace in all manner of musical situations.', '', ''),
+(65, 21, 'Turntables and CDJ', 'The DJ world was built upon the twin bedrocks of vinyl DJ turntables and CD decks, and the two are still commonly found at the beating heart of club DJ installs.', '', ''),
+(66, 21, 'Mixers', 'Though DJ technology has transformed in recent years, at the heart of most DJ set-ups you will still find a mixer. ', '', '');
 
 -- --------------------------------------------------------
 
@@ -76,7 +86,7 @@ INSERT INTO `category_type` (`cat_id`, `type_id`, `type_name`, `type_description
 -- Table structure for table `current_group`
 --
 
-CREATE TABLE IF NOT EXISTS `current_group` (
+CREATE TABLE `current_group` (
   `set_id` int(11) NOT NULL DEFAULT '1',
   `set_group` varchar(45) NOT NULL,
   `set_date` datetime NOT NULL
@@ -87,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `current_group` (
 --
 
 INSERT INTO `current_group` (`set_id`, `set_group`, `set_date`) VALUES
-(1, '18', '2015-04-06 23:19:24');
+(1, '21', '2015-04-06 23:19:24');
 
 -- --------------------------------------------------------
 
@@ -95,8 +105,8 @@ INSERT INTO `current_group` (`set_id`, `set_group`, `set_date`) VALUES
 -- Table structure for table `product_list`
 --
 
-CREATE TABLE IF NOT EXISTS `product_list` (
-`pd_id` int(10) unsigned NOT NULL,
+CREATE TABLE `product_list` (
+  `pd_id` int(10) UNSIGNED NOT NULL,
   `cat_id` int(11) NOT NULL,
   `pd_name` varchar(200) NOT NULL,
   `pd_description` text NOT NULL,
@@ -152,14 +162,22 @@ CREATE TABLE IF NOT EXISTS `product_list` (
   `pd_scode5` varchar(200) NOT NULL,
   `pd_companyname` varchar(45) NOT NULL,
   `pd_seller` varchar(45) NOT NULL DEFAULT 'Sold by'
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product_list`
 --
 
 INSERT INTO `product_list` (`pd_id`, `cat_id`, `pd_name`, `pd_description`, `pd_price`, `pd_weight`, `pd_qty`, `pd_image`, `pd_thumbnail`, `pd_thumbnail_L`, `pd_date`, `pd_last_update`, `pd_code`, `pd_dimension`, `pd_boardtype`, `pd_controllertype`, `pd_pcbtype`, `pd_support1`, `pd_support2`, `pd_support3`, `pd_spec1`, `pd_spec2`, `pd_spec3`, `pd_spec4`, `pd_spec5`, `pd_spec6`, `pd_spec7`, `pd_spec8`, `pd_spec9`, `pd_spec10`, `pd_bulletsymbol`, `pd_detaildownload`, `pd_detaildescription`, `pd_detaildescription1`, `pd_detaildescription2`, `pd_detaildescription3`, `pd_detaildescription4`, `pd_detaildescription5`, `pd_usermanual`, `pd_usmanual1`, `pd_usmanual2`, `pd_usmanual3`, `pd_usmanual4`, `pd_usmanual5`, `pd_relatedweblink`, `pd_rweblink1`, `pd_rweblink2`, `pd_rweblink3`, `pd_sourcecode`, `pd_scode1`, `pd_scode2`, `pd_scode3`, `pd_scode4`, `pd_scode5`, `pd_companyname`, `pd_seller`) VALUES
-(82, 54, 'SXKS Single X Keyboard Stand', 'Unless you want to drill strap buttons onto your synth and rock out Revenge of the Nerds-style, you''re gonna need something to put that keyboard on. Short of stealing a bunch of milk crates and lashing them together to form a teetering plastic totem, this World Tour SXKS Single X keyboard stand is the most cost-effective way to get your instrument off the ground -- and it''s way more legal!', '500.00', '1.000000', 5, '4ef102e9b6ccdd1e42041c926e127821.jpg', 'e0dd186d42934a55d2a7f0b2a138c362.jpg', '', '2015-04-06 23:25:06', '0000-00-00 00:00:00', '	A0000023', '10', '', '', '', '', '', '', 'Got a keyboard? Support it with this super-affordable X-stand. The World Tour SXKs stand''s latching clutch locks in place to adjust to the right height.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by');
+(82, 54, 'SXKS Single X Keyboard Stand', 'Unless you want to drill strap buttons onto your synth and rock out Revenge of the Nerds-style, you''re gonna need something to put that keyboard on. Short of stealing a bunch of milk crates and lashing them together to form a teetering plastic totem, this World Tour SXKS Single X keyboard stand is the most cost-effective way to get your instrument off the ground -- and it''s way more legal!', '500.00', '1.000000', 5, '4ef102e9b6ccdd1e42041c926e127821.jpg', 'e0dd186d42934a55d2a7f0b2a138c362.jpg', '', '2015-04-06 23:25:06', '0000-00-00 00:00:00', '	A0000023', '10', '', '', '', '', '', '', 'Got a keyboard? Support it with this super-affordable X-stand. The World Tour SXKs stand''s latching clutch locks in place to adjust to the right height.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(83, 55, 'The Fender Sonoran mini acoustic guitar', 'The reverberant agathis top complements the back and sides beautifully by projecting the sound with incredible clarity and force. Fitted to the body is a sturdy mahogany neck, married to a lush rosewood fingerboard. The neck provides the perfect surface to allow the strings to resonate along for maximum sustain. The fingerboard is a delight to play, yielding notes with articulation and precision.', '550.00', '0.000000', 6, '909de3d219494f238c24b2753d3f6868.jpg', 'batch_909de3d219494f238c24b2753d3f6868.jpg', '', '2016-10-30 03:08:49', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(84, 56, 'Epiphone SG Special Electric Guitar', 'This guitar, with its devilish double-cutaway design, reigns supreme in access to all of its 22 frets. The bolt-on hard maple neck provides rigidity and durability to create a delightfully playable feel, while the SlimTaper neck profile is fast and comfortable. The sumptuous rosewood fingerboard carries 22-frets that are adorned with stylish dot position inlays. A pair of hot open-coil, noise-free Humbucking pickups voiced specifically for the bridge position (700T) and neck position (650R) give you authentic rock tone with just the right amount of grit and growl.', '700.00', '0.000000', 5, 'epiphone-sg-special.jpg', 'batch_epiphone-sg-special.jpg', '', '2016-10-30 03:33:35', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Epiphone SG Special Electric Guitar in a sumptuous, vintage cherry employs a range of features that show off just why Epiphone are so popular amongst guitarists all over the world.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(85, 57, 'Epiphone EB-3 SG Bass Guitar', 'Following in the footsteps of the legendary SG, the EB-3 Bass Guitar uses the same body that made guitarists all over the world go weak at the knees in the late 1960â€™s. Built from mahogany the EB-3 provides rich, full tones in a lightweight, yet extremely resilient body.\r\n\r\nA mahogany neck using the popular SlimTaper neck profile, gives an amazing, comfortable feel; a much needed quality in any bass guitar. The EB-3 uses a serene rosewood fingerboard sporting 22 frets with stylish trapezoid inlays, for smooth transitioning all across the 34 inch scale length.', '1200.00', '0.000000', 3, 'epiphone-eb-3-ch.jpg', 'batch_epiphone-eb-3-ch.jpg', '', '2016-10-30 03:48:07', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Epiphone EB-3 SG Bass Guitar brings forth a modern reinvention of a classic guitar. This bass is jam packed with sustain, tone, and super-cool.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(86, 58, 'Kawai KDP90 Digital Piano', 'To compliment the painstaking effort that has gone into the feel of the keyboard system, the KDP90 captures the beautiful sound of Kawai’s highly acclaimed EX concert grand piano, with all 88 keys of this exceptional instrument meticulously recorded, analysed and faithfully reproduced using proprietary harmonic imaging technology. Further to this, the KDP90 contains other high quality instruments including electronic pianos, organs, chorale and synth.', '3200.00', '0.000000', 2, 'kawai-kdp902.jpg', 'batch_kawai-kdp902.jpg', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', 'The Kawai KDP-90 delivers a completely authentic playing experience thanks to its 88 note, advanced hammer action IV-F keyboard system.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(88, 60, 'Alesis IO Dock II Recording Interface', 'The interface provides two input, two output connectivity. The two inputs are via XLR combo jacks. These can be either mic inputs (with phantom power) or line inputs, with input 1 able to be switched to a high impedance guitar input. The guitar preamp has been subject to some fine-tuning since the original device, with improved accuracy and sonic performance. Each input has its own level control.', '750.00', '0.000000', 10, 'alesis_MIDI.jpg', 'batch_alesis_MIDI.jpg', '', '2016-10-30 04:17:42', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Alesis IO Dock II picks up the baton from its highly innovative predecessor, and delivers a unit that is even more flexible and convenient. ', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(89, 61, 'M-Audio Vocal Studio Pro 2 Complete Recording Package', 'The M-Audio Vocal Studio Pro 2 has everything you need to record your vocals in one place, be it for capturing vocals and guitar for a track, podcasting or creating voiceovers for multimedia projects. High performance hardware and easy-to-use software come together in this pack to make your life easy and your transition into recording a simple one.', '600.00', '0.000000', 10, 'm-audio_vocal_studio_pro_2.jpg', 'batch_m-audio_vocal_studio_pro_2.jpg', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', 'Aside from a computer and your talent everything you need is in the box.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(90, 64, 'Boss BR800 8-Track Digital Recorder', 'Recording need not be a complex chore, the Boss EZ record function quickly guides you through the essential steps so you can record with incredible speed. Song Sketch provides rapid stereo recording of your ideas, when you just want to get going and lay down a simple track without having to worry about the rest. A built-in drum machine lets solo artists record full tracks, lets bands record quick demos and lets performers build up quality backing tracks.', '1500.00', '0.000000', 15, 'boss_digital_recorder.jpg', 'batch_boss_digital_recorder.jpg', '', '2016-10-30 04:35:44', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Boss BR800 8-Track Digital Recorder is a powerful production studio, interface, control surface and location recorder all rolled into one simple to use device.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by'),
+(91, 63, 'Sennheiser E935 Cardioid Vocal Microphone', 'The Sennheiser E935 Vocal Mic is designed to deliver excellent sound quality for all performances be it presentations, solo performances or with a full band. You can rest assured that you will be using a rugged microphone that will last gig after gig whilst all the while cutting through mix with true clarity. The Sennheiser E935 is built so well, it is often the first choice for PA rental companies. Whether it''s for live performances such as presentations, or more studio orientated work like podcasters or voice overs, the Sennheiser E935 Vocal Microphone is sure to deliver.', '400.00', '0.000000', 20, 'sennheiser_e935_microphone.jpg', 'batch_sennheiser_e935_microphone.jpg', '', '2016-10-30 04:37:04', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Sennheiser E935 Vocal Mic contains a shock-mounted capsule so handling noise will be kept at an absolute minimum and the cardioid pickup pattern ensures insulation from other on-stage signals.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by');
 
 -- --------------------------------------------------------
 
@@ -167,10 +185,10 @@ INSERT INTO `product_list` (`pd_id`, `cat_id`, `pd_name`, `pd_description`, `pd_
 -- Table structure for table `symbol_table`
 --
 
-CREATE TABLE IF NOT EXISTS `symbol_table` (
-`sym_id` int(10) unsigned NOT NULL,
+CREATE TABLE `symbol_table` (
+  `sym_id` int(10) UNSIGNED NOT NULL,
   `sym_bullet` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `symbol_table`
@@ -185,15 +203,15 @@ INSERT INTO `symbol_table` (`sym_id`, `sym_bullet`) VALUES
 -- Table structure for table `tbl_cart`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_cart` (
-`ct_id` int(10) unsigned NOT NULL,
-  `pd_id` int(10) unsigned NOT NULL,
-  `ct_qty` mediumint(8) unsigned NOT NULL DEFAULT '1',
+CREATE TABLE `tbl_cart` (
+  `ct_id` int(10) UNSIGNED NOT NULL,
+  `pd_id` int(10) UNSIGNED NOT NULL,
+  `ct_qty` mediumint(8) UNSIGNED NOT NULL DEFAULT '1',
   `ct_session_id` varchar(45) NOT NULL,
   `ct_date` datetime NOT NULL,
   `ct_weight` decimal(5,2) NOT NULL,
   `cart_qty` mediumint(8) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_cart`
@@ -208,11 +226,11 @@ INSERT INTO `tbl_cart` (`ct_id`, `pd_id`, `ct_qty`, `ct_session_id`, `ct_date`, 
 -- Table structure for table `tbl_currency`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_currency` (
-`cy_id` int(10) unsigned NOT NULL,
+CREATE TABLE `tbl_currency` (
+  `cy_id` int(10) UNSIGNED NOT NULL,
   `cy_code` varchar(3) NOT NULL,
   `cy_symbol` varchar(8) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_currency`
@@ -231,8 +249,8 @@ INSERT INTO `tbl_currency` (`cy_id`, `cy_code`, `cy_symbol`) VALUES
 -- Table structure for table `tbl_order`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_order` (
-`od_id` int(10) unsigned NOT NULL,
+CREATE TABLE `tbl_order` (
+  `od_id` int(10) UNSIGNED NOT NULL,
   `od_date` datetime NOT NULL,
   `od_last_update` datetime NOT NULL,
   `od_status` enum('New','Paid','Shipped','Completed','Cancelled') NOT NULL,
@@ -269,10 +287,10 @@ CREATE TABLE IF NOT EXISTS `tbl_order` (
 -- Table structure for table `tbl_order_item`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_order_item` (
-  `od_id` int(10) unsigned NOT NULL,
-  `pd_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `od_qty` int(10) unsigned NOT NULL DEFAULT '0'
+CREATE TABLE `tbl_order_item` (
+  `od_id` int(10) UNSIGNED NOT NULL,
+  `pd_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `od_qty` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -281,8 +299,8 @@ CREATE TABLE IF NOT EXISTS `tbl_order_item` (
 -- Table structure for table `tbl_shipmentcost`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_shipmentcost` (
-`ship_id` int(11) NOT NULL,
+CREATE TABLE `tbl_shipmentcost` (
+  `ship_id` int(11) NOT NULL,
   `sc_name_country` varchar(45) NOT NULL,
   `sc_country` varchar(45) NOT NULL,
   `sc_fwp` decimal(5,2) NOT NULL DEFAULT '0.00',
@@ -290,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `tbl_shipmentcost` (
   `sc_realweight` decimal(5,2) NOT NULL DEFAULT '0.50',
   `sc_set` varchar(3) NOT NULL DEFAULT 'NO',
   `sc_comment` varchar(1000) NOT NULL DEFAULT '0.5'
-) ENGINE=InnoDB AUTO_INCREMENT=241 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_shipmentcost`
@@ -544,13 +562,13 @@ INSERT INTO `tbl_shipmentcost` (`ship_id`, `sc_name_country`, `sc_country`, `sc_
 -- Table structure for table `tbl_shop_config`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_shop_config` (
+CREATE TABLE `tbl_shop_config` (
   `sc_name` varchar(50) NOT NULL,
   `sc_address` varchar(200) NOT NULL,
   `sc_phone` varchar(45) NOT NULL,
   `sc_email` varchar(100) NOT NULL,
   `sc_shipping_cost` decimal(5,2) NOT NULL DEFAULT '0.00',
-  `sc_currency` int(10) unsigned NOT NULL DEFAULT '1',
+  `sc_currency` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `sc_order_email` enum('y','n') NOT NULL DEFAULT 'n'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -567,7 +585,7 @@ INSERT INTO `tbl_shop_config` (`sc_name`, `sc_address`, `sc_phone`, `sc_email`, 
 -- Table structure for table `tbl_user`
 --
 
-CREATE TABLE IF NOT EXISTS `tbl_user` (
+CREATE TABLE `tbl_user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(45) DEFAULT NULL,
   `user_password` varchar(45) DEFAULT NULL,
@@ -580,7 +598,7 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_password`, `user_regdate`, `user_last_login`) VALUES
-(0, 'admin', 'password', NULL, '2015-04-06 23:00:57');
+(0, 'admin', 'password', NULL, '2016-10-30 05:29:35');
 
 --
 -- Indexes for dumped tables
@@ -590,73 +608,74 @@ INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_password`, `user_regdate`,
 -- Indexes for table `category_group`
 --
 ALTER TABLE `category_group`
- ADD PRIMARY KEY (`group_id`);
+  ADD PRIMARY KEY (`group_id`);
 
 --
 -- Indexes for table `category_type`
 --
 ALTER TABLE `category_type`
- ADD PRIMARY KEY (`cat_id`);
+  ADD PRIMARY KEY (`cat_id`);
 
 --
 -- Indexes for table `current_group`
 --
 ALTER TABLE `current_group`
- ADD PRIMARY KEY (`set_id`);
+  ADD PRIMARY KEY (`set_id`);
 
 --
 -- Indexes for table `product_list`
 --
 ALTER TABLE `product_list`
- ADD PRIMARY KEY (`pd_id`);
+  ADD PRIMARY KEY (`pd_id`);
 
 --
 -- Indexes for table `symbol_table`
 --
 ALTER TABLE `symbol_table`
- ADD PRIMARY KEY (`sym_id`);
+  ADD PRIMARY KEY (`sym_id`);
 
 --
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
- ADD PRIMARY KEY (`ct_id`);
+  ADD PRIMARY KEY (`ct_id`);
 
 --
 -- Indexes for table `tbl_currency`
 --
 ALTER TABLE `tbl_currency`
- ADD PRIMARY KEY (`cy_id`);
+  ADD PRIMARY KEY (`cy_id`);
 
 --
 -- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
- ADD PRIMARY KEY (`od_id`);
+  ADD PRIMARY KEY (`od_id`);
 
 --
 -- Indexes for table `tbl_order_item`
 --
 ALTER TABLE `tbl_order_item`
- ADD PRIMARY KEY (`od_id`,`pd_id`);
+  ADD PRIMARY KEY (`od_id`,`pd_id`);
 
 --
 -- Indexes for table `tbl_shipmentcost`
 --
 ALTER TABLE `tbl_shipmentcost`
- ADD PRIMARY KEY (`ship_id`);
+  ADD PRIMARY KEY (`ship_id`);
 
 --
 -- Indexes for table `tbl_shop_config`
 --
 ALTER TABLE `tbl_shop_config`
- ADD PRIMARY KEY (`sc_email`);
+  ADD PRIMARY KEY (`sc_email`);
 
 --
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
- ADD PRIMARY KEY (`user_id`), ADD UNIQUE KEY `user_name_UNIQUE` (`user_name`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_name_UNIQUE` (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -666,42 +685,42 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `category_group`
 --
 ALTER TABLE `category_group`
-MODIFY `group_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+  MODIFY `group_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `category_type`
 --
 ALTER TABLE `category_type`
-MODIFY `cat_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+  MODIFY `cat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `product_list`
 --
 ALTER TABLE `product_list`
-MODIFY `pd_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=83;
+  MODIFY `pd_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `symbol_table`
 --
 ALTER TABLE `symbol_table`
-MODIFY `sym_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `sym_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-MODIFY `ct_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=120;
+  MODIFY `ct_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 --
 -- AUTO_INCREMENT for table `tbl_currency`
 --
 ALTER TABLE `tbl_currency`
-MODIFY `cy_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `cy_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-MODIFY `od_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `od_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_shipmentcost`
 --
 ALTER TABLE `tbl_shipmentcost`
-MODIFY `ship_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=241;
+  MODIFY `ship_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
