@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 30, 2016 at 12:47 PM
+-- Generation Time: Oct 30, 2016 at 09:25 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -44,10 +44,10 @@ INSERT INTO `category_group` (`cat_id`, `group_id`, `group_name`, `group_descrip
 (0, 16, 'Guitar', 'Digital and Analogue Guitar', '', ''),
 (0, 17, 'Recording', 'Digital Sound Recording', '', ''),
 (0, 18, 'Computer Audio', 'Sterio and Bass ', '', ''),
-(0, 19, 'Live Sound', 'Power Amps and Speakers', '', ''),
+(0, 19, 'DJ and Sound Machines', 'Power Amps and Speakers and DJ Equipments', '', ''),
 (0, 20, 'Drums', 'Acoustic and Electronic Drum Kits', '', ''),
-(0, 21, ' DJ', 'Virtual and Real Time Djs Player', '', ''),
-(0, 22, 'Orchestral', 'Woodwind Instruments and Music Stands and Cases', '', '');
+(0, 22, 'Orchestral', 'Woodwind Instruments and Music Stands and Cases', '', ''),
+(0, 25, 'Clearance', 'All Clearance Items here', '', '');
 
 -- --------------------------------------------------------
 
@@ -80,12 +80,13 @@ INSERT INTO `category_type` (`cat_id`, `type_id`, `type_name`, `type_description
 (62, 19, 'Speakers', 'Various types of Speakers', '', ''),
 (63, 17, 'Microphones', 'Whether you need a small-diaphragm condenser microphone, a cardioid dynamic microphone, or dual diaphragm valve microphone, RMS has the microphone for you.', '', ''),
 (64, 17, 'Digital Recorders', 'The rapid advances in digital technology have ensured that recorders of all types are commonplace in all manner of musical situations.', '', ''),
-(65, 21, 'Turntables and CDJ', 'The DJ world was built upon the twin bedrocks of vinyl DJ turntables and CD decks, and the two are still commonly found at the beating heart of club DJ installs.', '', ''),
-(66, 21, 'Mixers', 'Though DJ technology has transformed in recent years, at the heart of most DJ set-ups you will still find a mixer. ', '', ''),
+(65, 19, 'Turntables and CDJ', 'The DJ world was built upon the twin bedrocks of vinyl DJ turntables and CD decks, and the two are still commonly found at the beating heart of club DJ installs.', '', ''),
+(66, 19, 'Mixers', 'Though DJ technology has transformed in recent years, at the heart of most DJ set-ups you will still find a mixer. ', '', ''),
 (67, 22, 'Saxophones', 'Woodwind Instruments provide an integral role in everything from Jazz Bands, to Orchestras. ', '', ''),
 (68, 22, 'Music Stands and Cases', 'A Music Stand and Case are, perhaps, the only items common to every player in an orchestra. Essential for holding the music to be played.', '', ''),
 (69, 20, 'Acoustic Drum Kits', 'We have kits suitable from the professional through to the beginner, with more beginner kits from Essentials, Mirage and Stagg. ', '', ''),
-(70, 20, 'Electronic Drum Kits', 'Electronic Drum Kits are electric versions of the traditional acoustic drum kits. These digital kits offer practical means of learning how to play the drums and are popular with beginners.', '', '');
+(70, 20, 'Electronic Drum Kits', 'Electronic Drum Kits are electric versions of the traditional acoustic drum kits. These digital kits offer practical means of learning how to play the drums and are popular with beginners.', '', ''),
+(71, 25, 'Clearance Items', 'Checkout our year end Clearance Sale. Until stock lasts.', '', '');
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,7 @@ CREATE TABLE `current_group` (
 --
 
 INSERT INTO `current_group` (`set_id`, `set_group`, `set_date`) VALUES
-(1, '22', '2015-04-06 23:19:24');
+(1, '15', '2015-04-06 23:19:24');
 
 -- --------------------------------------------------------
 
@@ -176,6 +177,10 @@ CREATE TABLE `product_list` (
 --
 
 INSERT INTO `product_list` (`pd_id`, `cat_id`, `pd_name`, `pd_description`, `pd_price`, `pd_weight`, `pd_qty`, `pd_image`, `pd_thumbnail`, `pd_thumbnail_L`, `pd_date`, `pd_last_update`, `pd_code`, `pd_dimension`, `pd_boardtype`, `pd_controllertype`, `pd_pcbtype`, `pd_support1`, `pd_support2`, `pd_support3`, `pd_spec1`, `pd_spec2`, `pd_spec3`, `pd_spec4`, `pd_spec5`, `pd_spec6`, `pd_spec7`, `pd_spec8`, `pd_spec9`, `pd_spec10`, `pd_bulletsymbol`, `pd_detaildownload`, `pd_detaildescription`, `pd_detaildescription1`, `pd_detaildescription2`, `pd_detaildescription3`, `pd_detaildescription4`, `pd_detaildescription5`, `pd_usermanual`, `pd_usmanual1`, `pd_usmanual2`, `pd_usmanual3`, `pd_usmanual4`, `pd_usmanual5`, `pd_relatedweblink`, `pd_rweblink1`, `pd_rweblink2`, `pd_rweblink3`, `pd_sourcecode`, `pd_scode1`, `pd_scode2`, `pd_scode3`, `pd_scode4`, `pd_scode5`, `pd_companyname`, `pd_seller`) VALUES
+(11, 71, 'Epiphone EB-3 SG Bass Guitar', 'Following in the footsteps of the legendary SG, the EB-3 Bass Guitar uses the same body that made guitarists all over the world go weak at the knees in the late 1960â€™s. Built from mahogany the EB-3 provides rich, full tones in a lightweight, yet extremely resilient body.\r\n\r\nA mahogany neck using the popular SlimTaper neck profile, gives an amazing, comfortable feel; a much needed quality in any bass guitar. The EB-3 uses a serene rosewood fingerboard sporting 22 frets with stylish trapezoid inlays, for smooth transitioning all across the 34 inch scale length.', '1000.00', '0.000000', 3, 'epiphone-eb-3-ch.jpg', 'batch_epiphone-eb-3-ch.jpg', '', '2016-10-30 03:48:07', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Epiphone EB-3 SG Bass Guitar brings forth a modern reinvention of a classic guitar. This bass is jam packed with sustain, tone, and super-cool.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
+(12, 71, 'HK Audio Elements EA 600 Power Amp', 'The power amp module is ventilated from the front. A rotary selector lets you choose a special EQ setting to match the number of connected E 435s and optimize the frequency response for a column of that height. The HK Audio Elements PA system is comprised of 6 elements, which can be combined in hundreds of different configurations to cater for every situation, no matter how much or how little sound reinforcement is needed.', '1250.00', '0.000000', 10, 'hk_audio_elements_ea_600_power_amp.jpg', 'batch_hk_audio_elements_ea_600_power_amp.jpg', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', 'Housed in an enclosure that shares the same design as the mid/ high unit, the HK Audio EA 600 amp module delivers 600 watts at 4 ohms. I', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
+(13, 71, 'Mirage MS5 Conductor Style Music Stand', 'Whether you are playing in a standing or seated position, the height adjustment dimensions range from 900 to 1500 mm. Wherever you set your desired height, the central support feels reassuringly sturdy, whilst the large clasps are very comfortable to adjust. As previously noted, the desk angle can be set into a flat position, right up to a fully vertical position.', '70.00', '0.000000', 20, 'am-108412.jpg', 'batch_am-108412.jpg', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', 'The Mirage MS5 Conductor Style Music Stand in Black is an incredibly strong and reliable music stand that is designed to hold sheet music, books, tablets, and even some laptops.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
+(14, 71, 'Boss BR800 8-Track Digital Recorder', 'Recording need not be a complex chore, the Boss EZ record function quickly guides you through the essential steps so you can record with incredible speed. Song Sketch provides rapid stereo recording of your ideas, when you just want to get going and lay down a simple track without having to worry about the rest. A built-in drum machine lets solo artists record full tracks, lets bands record quick demos and lets performers build up quality backing tracks.', '1200.00', '0.000000', 15, 'boss_digital_recorder.jpg', 'batch_boss_digital_recorder.jpg', '', '2016-10-30 04:35:44', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Boss BR800 8-Track Digital Recorder is a powerful production studio, interface, control surface and location recorder all rolled into one simple to use device.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
 (82, 54, 'SXKS Single X Keyboard Stand', 'Unless you want to drill strap buttons onto your synth and rock out Revenge of the Nerds-style, you''re gonna need something to put that keyboard on. Short of stealing a bunch of milk crates and lashing them together to form a teetering plastic totem, this World Tour SXKS Single X keyboard stand is the most cost-effective way to get your instrument off the ground -- and it''s way more legal!', '500.00', '1.000000', 5, '4ef102e9b6ccdd1e42041c926e127821.jpg', 'e0dd186d42934a55d2a7f0b2a138c362.jpg', '', '2015-04-06 23:25:06', '0000-00-00 00:00:00', '	A0000023', '10', '', '', '', '', '', '', 'Got a keyboard? Support it with this super-affordable X-stand. The World Tour SXKs stand''s latching clutch locks in place to adjust to the right height.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
 (83, 55, 'The Fender Sonoran mini acoustic guitar', 'The reverberant agathis top complements the back and sides beautifully by projecting the sound with incredible clarity and force. Fitted to the body is a sturdy mahogany neck, married to a lush rosewood fingerboard. The neck provides the perfect surface to allow the strings to resonate along for maximum sustain. The fingerboard is a delight to play, yielding notes with articulation and precision.', '550.00', '0.000000', 6, '909de3d219494f238c24b2753d3f6868.jpg', 'batch_909de3d219494f238c24b2753d3f6868.jpg', '', '2016-10-30 03:08:49', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Fender Sonoran mini acoustic guitar is an excellent travel companion; as well as being a great guitar for beginners, children or people who prefer to play along a shorter scale length.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
 (84, 56, 'Epiphone SG Special Electric Guitar', 'This guitar, with its devilish double-cutaway design, reigns supreme in access to all of its 22 frets. The bolt-on hard maple neck provides rigidity and durability to create a delightfully playable feel, while the SlimTaper neck profile is fast and comfortable. The sumptuous rosewood fingerboard carries 22-frets that are adorned with stylish dot position inlays. A pair of hot open-coil, noise-free Humbucking pickups voiced specifically for the bridge position (700T) and neck position (650R) give you authentic rock tone with just the right amount of grit and growl.', '700.00', '0.000000', 5, 'epiphone-sg-special.jpg', 'batch_epiphone-sg-special.jpg', '', '2016-10-30 03:33:35', '0000-00-00 00:00:00', '	', '', '', '', '', '', '', '', 'The Epiphone SG Special Electric Guitar in a sumptuous, vintage cherry employs a range of features that show off just why Epiphone are so popular amongst guitarists all over the world.', '', '', '', '', '', '', '', '', '', '&#8226;', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Sold by RMS'),
@@ -613,7 +618,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_password`, `user_regdate`, `user_last_login`) VALUES
-(0, 'admin', 'password', NULL, '2016-10-30 05:29:35');
+(0, 'admin', 'password', NULL, '2016-10-30 19:52:15');
 
 --
 -- Indexes for dumped tables
@@ -700,12 +705,12 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `category_group`
 --
 ALTER TABLE `category_group`
-  MODIFY `group_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `group_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `category_type`
 --
 ALTER TABLE `category_type`
-  MODIFY `cat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `cat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `product_list`
 --
@@ -720,7 +725,7 @@ ALTER TABLE `symbol_table`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `ct_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `ct_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 --
 -- AUTO_INCREMENT for table `tbl_currency`
 --
