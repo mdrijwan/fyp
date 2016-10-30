@@ -7,7 +7,7 @@ This is a server plus client base programme, therefore, you have to run it with 
 
 Database Configuration
 
-3) Locate  file " everblaz_minstrument.sql"
+3) Locate  file `rijwan_fyp`
 4) Import that .sql file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while  name my database
 " everblaz_minstrument ", therefore, it is advisable to name your same way,
 5) Once done you should see list of table understand you database, A typical example  is "category_group"
