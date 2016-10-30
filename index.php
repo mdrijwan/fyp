@@ -79,10 +79,10 @@
 								<!-----pop-up-grid---->
 								 <div id="small-dialog" class="mfp-hide">
 									<div class="pop_up">
-										<h3>Get 30% of from every purchase!</h3>
-										<p>We offer  free shipping (on almost everything) from the biggest online selection of musical instruments and equipment including guitars, basses, amps & effects, keyboards & MIDI, drums & percussion, live sound, DJ, microphones, recording, band & orchestra, Folk Instruments, accessories, and more. </p>
+										<h3>RMS Clearance!!!</h3>
+										<p>Rijwan Music Store is now the new talk of the town! Checkout our year end Clearance Sale. Until stock lasts. Hurry up! </p>
 										<ul>
-											<li><a class="iphone" href="product.php"> </a></li>
+											<li><a class="iphone" href="product.php?c=71"> </a></li>
 
 										</ul>
 						  			</div>

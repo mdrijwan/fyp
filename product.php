@@ -229,10 +229,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <section class="slider" style="width:800px; ">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="images/homepage1.jpg" alt=""/></li>
-						<li><img src="images/homepage6.jpg" alt=""/></li>
-						<li><img src="images/homepage10.jpg" alt=""/></li>
-						<li></li>
+						<li><img src="images/piano.jpg" alt=""/></li>
+            <li><img src="images/speakers.jpg" alt=""/></li>
+            <li><img src="images/guitar.jpg" alt=""/></li>
+            <li><img src="images/saxophone.jpg" alt=""/></li>
+            <li><img src="images/dj.jpg" alt=""/></li>
+            <li><img src="images/mic.jpg" alt=""/></li>
+            <li><img src="images/drum.jpg" alt=""/></li>
 				    </ul>
 				  </div>
 	      </section>

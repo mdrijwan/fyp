@@ -224,13 +224,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
     	<div class="section group">
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-            <?php
-if (empty($_POST) === false){
-  echo 'Submitted';
-
-}
-             ?>
-
+            
 				  	<h2>Contact Us</h2>
 					    <form action="" method="post">
 					    	<div>

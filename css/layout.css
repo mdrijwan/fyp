@@ -46,7 +46,7 @@ body{
 	width:466px;
 	height:400px;
 	display:block;
-	
+
 }
 /*---header-right----*/
 .header-right{
@@ -325,7 +325,7 @@ body{
 	margin: 0 auto;
 	text-align: center;
 	display: block;
-	
+
 }
 .share-icons span a{
 	color:#FE9623;
@@ -340,7 +340,7 @@ body{
 	display:block;
 }
 .twitter{
-	background:url(../images/big-social-icons.png) no-repeat 0px 0px; 
+	background:url(../images/big-social-icons.png) no-repeat 0px 0px;
 }
 .facebook{
 	background: url(../images/big-social-icons.png) no-repeat -172px 0px;
