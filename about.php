@@ -24,7 +24,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 ?>
 <!DOCTYPE HTML>
 <head>
-<title>Free Smart Store Website Template | About :: w3layouts</title>
+  <title>Rijwan Music Store | About</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
