@@ -143,7 +143,7 @@ function buildCategoryOptions($catId = 0)
 
 function buildCategoryOptions($catId = 0)
 {
-	$sql = "SELECT cat_id, type_id, type_name
+	$sql = "SELECT cat_id, group_id, type_name
 			FROM category_type
 			ORDER BY cat_id";
 	$result = dbQuery($sql) or die('Cannot get Product. ' . mysql_error());

@@ -110,9 +110,9 @@ if (isset($_GET['catId']) && (int)$_GET['catId'] >= 0) {
 
 $rowsPerPage = 5;
 
-$sql = "SELECT cat_id, type_id, type_name, type_description, type_image
+$sql = "SELECT cat_id, group_id, type_name, type_description, type_image
         FROM category_type
-		WHERE type_id = $catId
+		WHERE group_id = $catId
 		ORDER BY type_name";
 $result     = dbQuery(getPagingQuery($sql, $rowsPerPage));
 $pagingLink = getPagingLink($sql, $rowsPerPage);
@@ -128,7 +128,7 @@ $pagingLink = getPagingLink($sql, $rowsPerPage);
    <td width="75">Delete</td>
   </tr>
   <?php
-$type_id = 0;
+$group_id = 0;
 if (dbNumRows($result) > 0) {
 	$i = 0;
 	
@@ -143,7 +143,7 @@ if (dbNumRows($result) > 0) {
 		
 		$i += 1;
 		
-		if ($type_id == 0) {
+		if ($group_id == 0) {
 			$type_name = "<a href=\"index.php?catId=$cat_id\">$cat_name</a>";
 		}
 		
@@ -157,8 +157,8 @@ if (dbNumRows($result) > 0) {
    <td><?php echo $type_name; ?></td>
    <td><?php echo nl2br($type_description); ?></td>
    <td width="75" align="center"><img src="<?php echo $type_image; ?>"></td>
-   <td width="75" align="center"><a href="javascript:modifyCategory(<?php echo $type_id; ?>);">Modify</a></td>
-   <td width="75" align="center"><a href="javascript:deleteCategory(<?php echo $type_id; ?>);">Delete</a></td>
+   <td width="75" align="center"><a href="javascript:modifyCategory(<?php echo $group_id; ?>);">Modify</a></td>
+   <td width="75" align="center"><a href="javascript:deleteCategory(<?php echo $group_id; ?>);">Delete</a></td>
   </tr>
   <?php
 	} // end while

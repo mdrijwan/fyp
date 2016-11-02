@@ -12,7 +12,7 @@ if (isset($_GET['catId']) && (int)$_GET['catId'] > 0) {
 	
 $sql = "SELECT cat_id, type_name, type_description, type_image,type_link
 		FROM category_type
-		WHERE type_id = $catId";
+		WHERE group_id = $catId";
 $result = dbQuery($sql);
 while ($row = dbFetchAssoc($result))
 extract($row);

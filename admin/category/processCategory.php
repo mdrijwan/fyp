@@ -46,7 +46,7 @@ function addCategory()
     
     $catImage = uploadImage('fleImage', SRV_ROOT . 'images/category/');
     
-    $sql   = "INSERT INTO category_type (type_id, type_name, type_description, type_image) 
+    $sql   = "INSERT INTO category_type (group_id, type_name, type_description, type_image) 
               VALUES ($group_id, '$name', '$description', '$catImage')";
     $result = dbQuery($sql) or die('Cannot add category' . mysql_error());
     
@@ -112,7 +112,7 @@ function modifyCategory()
      
     $sql    = "UPDATE category_type 
                SET type_name = '$name', type_description = '$description', type_image = $catImage
-               WHERE type_id = $catId";
+               WHERE group_id = $catId";
            
     $result = dbQuery($sql) or die('Cannot update category. ' . mysql_error());
     header('Location: index.php');              
@@ -172,7 +172,7 @@ function getChildren($catId)
 {
     $sql = "SELECT cat_id ".
            "FROM category_type ".
-           "WHERE type_id = $catId ";
+           "WHERE group_id = $catId ";
     $result = dbQuery($sql);
     
 	$cat = array();

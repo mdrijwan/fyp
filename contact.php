@@ -3,15 +3,10 @@
 <?php
 //session_start();
 //$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
-
-
 require_once 'library/config.php';
 require_once 'library/group-function.php';
 require_once 'library/common.php';
-
 require_once 'library/cart-functions.php';
-
-
  $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
@@ -19,9 +14,6 @@ $edId   = (isset($_GET['e']) && $_GET['e'] != '') ? $_GET['e'] : 0;
 $tdId   = (isset($_GET['t']) && $_GET['t'] != '') ? $_GET['t'] : 0;
 $seId   = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : 0;
 $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
-
-
-
 ?>
 
 <!DOCTYPE HTML>
@@ -102,25 +94,19 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 			DropDown.prototype = {
 				initEvents : function() {
 					var obj = this;
-
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
 					});
 				}
 			}
-
 			$(function() {
-
 				var dd = new DropDown( $('#language') );
-
 				$(document).click(function() {
 					// all dropdowns
 					$('.wrapper-dropdown').removeClass('active');
 				});
-
 			});
-
 		</script>
 		 </div>
 			<div class="currency">
@@ -140,25 +126,19 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 			DropDown.prototype = {
 				initEvents : function() {
 					var obj = this;
-
 					obj.dd.on('click', function(event){
 						$(this).toggleClass('active');
 						event.stopPropagation();
 					});
 				}
 			}
-
 			$(function() {
-
 				var dd = new DropDown( $('#currency') );
-
 				$(document).click(function() {
 					// all dropdowns
 					$('.wrapper-dropdown').removeClass('active');
 				});
-
 			});
-
 		</script>
    </div>
 			<div class="clear"></div>
@@ -172,11 +152,9 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
     <ul>
          <?php
 		while ($row = dbFetchAssoc($result))// start while category main
-
 		{
 			extract($row); // this eliminate  hold variable for database data example $group_id=$row["group_id"];
 	//Display all group name fetch from database<ul>
-
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
@@ -224,7 +202,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
     	<div class="section group">
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-            
+
 				  	<h2>Contact Us</h2>
 					    <form action="" method="post">
 					    	<div>
@@ -336,9 +314,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 				easingType: 'linear'
 	 		};
 			*/
-
 			$().UItoTop({ easingType: 'easeOutQuart' });
-
 		});
 	</script>
     <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>

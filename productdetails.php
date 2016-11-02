@@ -116,7 +116,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 				<div class="rightsidebar span_3_of_1">
 					<h2>CATEGORIES</h2>
 					   <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
+           <?php 	 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image 
 	        FROM category_type 
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
