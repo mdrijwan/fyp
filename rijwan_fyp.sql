@@ -57,7 +57,7 @@ INSERT INTO `category_group` (`cat_id`, `group_id`, `group_name`, `group_descrip
 
 CREATE TABLE `category_type` (
   `cat_id` int(10) UNSIGNED NOT NULL,
-  `type_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
   `type_name` varchar(200) NOT NULL,
   `type_description` varchar(200) NOT NULL,
   `type_image` varchar(200) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `category_type` (
 -- Dumping data for table `category_type`
 --
 
-INSERT INTO `category_type` (`cat_id`, `type_id`, `type_name`, `type_description`, `type_image`, `type_link`) VALUES
+INSERT INTO `category_type` (`cat_id`, `group_id`, `type_name`, `type_description`, `type_image`, `type_link`) VALUES
 (54, 15, 'Keyboard Stands', 'Support your instrument with the perfect keyboard stand. zZounds has X-stands, Z-stands, tabletop stands, and cabinet-style stands to fit your keyboard.', '', ''),
 (55, 16, 'Acoustic Guitars', 'We stock a wide range of acoustic, electro-acoustic and classical guitars, from leading brands.', '', ''),
 (56, 16, 'Electric Guitars', 'From beginner to pro, shop for your next electric guitar at Dawsons Music. We stock a huge range online and in-store, including ever-popular solid-body guitars, to hollow-body guitars and archtops.', '', ''),

@@ -9,7 +9,7 @@ require_once 'config.php';
 /*
 	Get detail information of a product
 */
-function getProductDetail($pdId, $type_id)
+function getProductDetail($pdId, $group_id)
 {
 	
 	$_SESSION['shoppingReturnUrl'] = $_SERVER['REQUEST_URI'];

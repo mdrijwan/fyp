@@ -243,8 +243,8 @@ background-color: #CCFF9D;
        echo $group_name;    
 	    	
 		//Drop down  group name fetch from database		
-				 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
-	        FROM category_type WHERE type_id = $group_id
+				 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image 
+	        FROM category_type WHERE group_id = $group_id
 			ORDER BY cat_id";
     $result1 = mysql_query($sql1);
 	  
@@ -271,7 +271,7 @@ background-color: #CCFF9D;
 	  $type_name =  $type_name;
        echo $type_name; 
 	   //echo $cat_id;
-	   $type_id= $type_id;
+	   $group_id= $group_id;
 	 
 	
 

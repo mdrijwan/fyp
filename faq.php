@@ -165,8 +165,8 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
-	        FROM category_type WHERE type_id = $group_id
+           <?php 	 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image
+	        FROM category_type WHERE group_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
 			  while ($row1=mysql_fetch_assoc($result1,MYSQL_ASSOC)) // start while drop down

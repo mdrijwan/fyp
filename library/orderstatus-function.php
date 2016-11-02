@@ -130,8 +130,8 @@ $tdId   = (isset($_GET['t']) && $_GET['t'] != '') ? $_GET['t'] : 0;
        echo $group_name;    
 	    	
 		//Drop down  group name fetch from database		
-				 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image 
-	        FROM category_type WHERE type_id = $group_id
+				 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image 
+	        FROM category_type WHERE group_id = $group_id
 			ORDER BY cat_id";
     $result1 = mysql_query($sql1);
 	  
@@ -159,12 +159,12 @@ $tdId   = (isset($_GET['t']) && $_GET['t'] != '') ? $_GET['t'] : 0;
 	  $type_name = '&nbsp; &nbsp; &raquo;&nbsp;' . $type_name;
        echo $type_name; 
 	   //echo $cat_id;
-	   $type_id= $type_id;
+	   $group_id= $group_id;
 	    
 	  	
-//if($type_id==2){ echo'<a href="http://www.google.com">Click Me</a>';}
-		// if($type_id==1){ echo"cat1";}
-		// if($type_id==1){ echo"cat2";}
+//if($group_id==2){ echo'<a href="http://www.google.com">Click Me</a>';}
+		// if($group_id==1){ echo"cat1";}
+		// if($group_id==1){ echo"cat2";}
 		 
 	      echo "</li>";
 		 
