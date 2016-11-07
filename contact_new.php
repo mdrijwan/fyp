@@ -1,13 +1,107 @@
-
-
+<?php require_once('Connections/fyp.php'); ?>
+<?php require_once('Connections/fyp.php'); ?>
 <?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $mobile = $_POST['mobile'];
+  $message = $_POST['message'];
+
+  echo $message;die;
+}
+
+/*
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
+  $insertSQL = sprintf("INSERT INTO contact (name, email, mobile, message) VALUES (%s, %s, %s, %s)",
+                       GetSQLValueString($_POST['name'], "text"),
+                       GetSQLValueString($_POST['email'], "text"),
+                       GetSQLValueString($_POST['mobile'], "text"),
+                       GetSQLValueString($_POST['message'], "text"));
+
+  mysql_select_db($database_fyp, $fyp);
+  $Result1 = mysql_query($insertSQL, $fyp) or die(mysql_error());
+}*/
+
+mysql_select_db($database_fyp, $fyp);
+$query_Recordset1 = "SELECT * FROM contact";
+$Recordset1 = mysql_query($query_Recordset1, $fyp) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+
 //session_start();
 //$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 require_once 'library/config.php';
 require_once 'library/group-function.php';
 require_once 'library/common.php';
 require_once 'library/cart-functions.php';
- $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
+$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
 $edId   = (isset($_GET['e']) && $_GET['e'] != '') ? $_GET['e'] : 0;
@@ -45,9 +139,9 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 				<a href="index.html"><img src="images/rmslogo.jpg" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-          <div class="search_box">
-				    <form method="post" action="searchpage.php" name="searchform"  id="searchform">
-				    	<input type="text"  name="searchDB" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+			    <div class="search_box">
+				    <form>
+				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
@@ -158,8 +252,8 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
-	        FROM category_type WHERE type_id = $group_id
+           <?php 	 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image
+	        FROM category_type WHERE group_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
 			  while ($row1=mysql_fetch_assoc($result1,MYSQL_ASSOC)) // start while drop down
@@ -204,27 +298,30 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 				  <div class="contact-form">
 
 				  	<h2>Contact Us</h2>
-					    <form action="" method="post">
+            <p>&nbsp;</p>
+					    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 					    	<div>
 						    	<span><label>NAME</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" name="name" value="<?php echo $row_Recordset1['name']; ?>"></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" name="email" value="<?php echo $row_Recordset1['email']; ?>"></span>
 						    </div>
 						    <div>
 						     	<span><label>MOBILE.NO</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" name="mobile" value="<?php echo $row_Recordset1['mobile']; ?>"></span>
 						    </div>
 						    <div>
-						    	<span><label>SUBJECT</label></span>
-						    	<span><textarea> </textarea></span>
+						    	<span><label>MESSAGE</label></span>
+						    	<span><textarea name="message"><?php echo $row_Recordset1['message']; ?> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="SUBMIT"></span>
+						   		<span><input type="submit" value="Submit"></span>
 						  </div>
 					    </form>
+              <p>&nbsp;</p>
+
 				  </div>
   				</div>
 				<div class="col span_1_of_3">

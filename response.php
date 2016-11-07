@@ -92,20 +92,14 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 require_once 'library/config.php';
 require_once 'library/group-function.php';
 require_once 'library/common.php';
-
 require_once 'library/cart-functions.php';
-
-
- $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
+$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
 $edId   = (isset($_GET['e']) && $_GET['e'] != '') ? $_GET['e'] : 0;
 $tdId   = (isset($_GET['t']) && $_GET['t'] != '') ? $_GET['t'] : 0;
 $seId   = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : 0;
 $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
-
-
-
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -263,8 +257,8 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 		?>
       <li><a href="index.php"><?php echo $group_name ?></a>
         <ul>
-           <?php 	 $sql1 = "SELECT cat_id,type_id,type_name,type_description,type_image
-	        FROM category_type WHERE type_id = $group_id
+           <?php 	 $sql1 = "SELECT cat_id,group_id,type_name,type_description,type_image
+	        FROM category_type WHERE group_id = $group_id
 			ORDER BY cat_id";
             $result1 = mysql_query($sql1);
 			  while ($row1=mysql_fetch_assoc($result1,MYSQL_ASSOC)) // start while drop down
