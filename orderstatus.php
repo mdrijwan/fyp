@@ -27,7 +27,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 
 <!DOCTYPE HTML>
 <head>
-<title>Free Smart Store Website Template | login :: w3layouts</title>
+<title>Rijwan Music Store | Order Status</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -54,9 +54,9 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 				<a href="index.php"><img src="images/rmslogo.jpg" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-			    <div class="search_box">
-				    <form>
-				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+          <div class="search_box">
+				    <form method="post" action="searchpage.php" name="searchform"  id="searchform">
+				    	<input type="text"  name="searchDB" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
