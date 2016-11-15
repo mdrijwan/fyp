@@ -173,7 +173,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 	           {
 		        extract($row1);
 	           ?>
-          <li><a href="index.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
+          <li><a href="product.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
 
             <?php
 		       }

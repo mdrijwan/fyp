@@ -55,7 +55,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 			  <div class="header_top_right">
           <div class="search_box">
 				    <form method="post" action="searchpage.php" name="searchform"  id="searchform">
-				    	<input type="text"  name="searchDB" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+				    	<input type="text" name="searchDB" value="Search for Products by Name or Keyword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
@@ -188,7 +188,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 	           {
 		        extract($row1);
 	           ?>
-          <li><a href="index.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
+          <li><a href="product.php<?php echo "?c=$cat_id";  ?>"><?php  echo $type_name; ?></a></li>
 
             <?php
 		       }
