@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form method="post" action="searchpage.php" name="searchform"  id="searchform">
-				    	<input type="text" name="searchDB" value="Search for Products by Name or Keyword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+				    	<input type="text" name="searchDB" value="Search for Products by Name or Keyword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Product Name or Keyword';}"><input type="submit" value="SEARCH">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
