@@ -1,8 +1,8 @@
 function setPaymentInfo(isChecked)
 {
-	
 
-	
+
+
 	with (window.document.frmCheckout) {
 		if (isChecked) {
 			txtPaymentFirstName.value  = txtShippingFirstName.value;
@@ -10,35 +10,35 @@ function setPaymentInfo(isChecked)
 			txtPaymentAddress1.value   = txtShippingAddress1.value;
 			txtPaymentAddress2.value   = txtShippingAddress2.value;
 			txtPaymentPhone.value      = txtShippingPhone.value;
-			txtPaymentState.value      = txtShippingState.value;			
+			txtPaymentState.value      = txtShippingState.value;
 			txtPaymentCity.value       = txtShippingCity.value;
 			txtPaymentCountry.value       = txtShippingCountry.value;
 			txtPaymentPostalCode.value = txtShippingPostalCode.value;
-			
+
 			txtPaymentFirstName.readOnly  = true;
 			txtPaymentLastName.readOnly   = true;
 			txtPaymentAddress1.readOnly   = true;
 			txtPaymentAddress2.readOnly   = true;
 			txtPaymentPhone.readOnly      = true;
-			txtPaymentState.readOnly      = true;			
+			txtPaymentState.readOnly      = true;
 			txtPaymentCity.readOnly       = true;
 			txtPaymentCountry.readOnly       = true;
-			txtPaymentPostalCode.readOnly = true;			
+			txtPaymentPostalCode.readOnly = true;
 		}
-		
-	
-		
-		
+
+
+
+
 		 else {
 			txtPaymentFirstName.readOnly  = false;
 			txtPaymentLastName.readOnly   = false;
 			txtPaymentAddress1.readOnly   = false;
 			txtPaymentAddress2.readOnly   = false;
 			txtPaymentPhone.readOnly      = false;
-			txtPaymentState.readOnly      = false;			
+			txtPaymentState.readOnly      = false;
 			txtPaymentCity.readOnly       = false;
 			txtPaymentCountry.readOnly       = false;
-			txtPaymentPostalCode.readOnly = false;			
+			txtPaymentPostalCode.readOnly = false;
 		}
 	}
 }
@@ -48,24 +48,24 @@ function setPaymentInfo(isChecked)
 
 function checkShippingAndPaymentInfo()
 {
-	
-	
+
+
 	var x=document.forms["frmCheckout"]["txtEmail"].value;
      var atpos=x.indexOf("@");
       var dotpos=x.lastIndexOf(".");
-	  
+
       if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
         {
        alert("Provide a valid e-mail address example:123456@youremail.com");
         return false;
          }
-	
+
 	with (window.document.frmCheckout) {
-		
+
 		if (isEmpty(txtEmail, 'Provide Your Email address')) {
 			return false;
 		}
-	
+
 		else if (isEmpty(txtShippingFirstName, 'Enter first name')) {
 			return false;
 		} else if (isEmpty(txtShippingLastName, 'Enter last name')) {
@@ -94,14 +94,10 @@ function checkShippingAndPaymentInfo()
 			return false;
 		} else if (isEmpty(txtPaymentCountry, 'Enter Payment address country')) {
 			return false;
-			
 		} else if (isEmpty(txtPaymentPostalCode, 'Enter the Payment address postal/zip code')) {
 			return false;
-			
-		} 
+		}
 					
-			
-		
 		else {
 			return true;
 		}

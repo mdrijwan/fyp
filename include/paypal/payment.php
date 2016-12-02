@@ -10,22 +10,22 @@ if (!isset($orderId)) {
 
 require_once 'paypal.inc.php';
 
-$paypal['item_name'] = "Everblazing Creation Purchase";
+$paypal['item_name'] = "Rijwan Music Store Purchase";
 $paypal['invoice']   = $orderId;
 //$paypal['amount']=$_POST["hidTotalAmount"];
 $paypal['amount']    = $orderAmount;
 ?>
 <center>
     <p>&nbsp;</p>
-    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="333333">Processing 
+    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="333333">Processing
         Transaction . . . </font></p>
 </center>
 <form action="<?php echo $paypal['url']; ?>" method="post" name="frmPaypal" id="frmPaypal">
 <input type="hidden" name="amount" value="<?php echo $paypal['amount']; ?>">
 <input type="hidden" name="invoice" value="<?php echo $paypal['invoice']; ?>">
 <input type="hidden" name="item_name" value="<?php echo $paypal['item_name']; ?>">
-<input type="hidden" name="business" value="<?php echo $paypal['business']; ?>"> 
-<input type="hidden" name="cmd" value="<?php echo $paypal['cmd']; ?>"> 
+<input type="hidden" name="business" value="<?php echo $paypal['business']; ?>">
+<input type="hidden" name="cmd" value="<?php echo $paypal['cmd']; ?>">
 <input type="hidden" name="return" value="<?php echo  $paypal['site_url'] . $paypal['success_url']; ?>">
 <input type="hidden" name="cancel_return" value="<?php echo $paypal['site_url'] . $paypal['cancel_url']; ?>">
 <input type="hidden" name="notify_url" value="<?php echo  $paypal['site_url'] . $paypal['notify_url']; ?>">

@@ -1,74 +1,35 @@
+
 <?php
+//session_start();
+//$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 require_once 'library/config.php';
 require_once 'library/group-function.php';
 require_once 'library/common.php';
-
 require_once 'library/cart-functions.php';
-
- $_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
+$_SESSION['shop_return_url'] = $_SERVER['REQUEST_URI'];
 $catId  = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : 0;
 $pdId   = (isset($_GET['p']) && $_GET['p'] != '') ? $_GET['p'] : 0;
 $edId   = (isset($_GET['e']) && $_GET['e'] != '') ? $_GET['e'] : 0;
 $tdId   = (isset($_GET['t']) && $_GET['t'] != '') ? $_GET['t'] : 0;
 $seId   = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : 0;
 $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
-
-
-
-
-
-
-if (!defined('WEB_ROOT')) {
-	exit;
-}
-
-
-
-$sqldetails = "SELECT pd_id,cat_id, pd_name,pd_code, pd_description, pd_price, pd_qty,pd_weight, pd_image, pd_thumbnail, pd_date,pd_dimension,pd_detaildescription,pd_spec1,pd_spec2
-		FROM product_list p WHERE  pd_id = '$pdId'
-		ORDER BY pd_id";
-		$resultdetails     = mysql_query($sqldetails);
-
-while ($rowdetails = mysql_fetch_assoc($resultdetails ))// start while category main
-		{
-			extract($rowdetails);
-
-		}
-
-//Get Session ID and Show How many Item Add to Cart
-
- $sid = session_id();
-	$sql4 = "SELECT cart_qty
-	        FROM tbl_cart
-			WHERE ct_session_id = '$sid'";
-				$result4  = mysql_query($sql4);
-				$row4 = mysql_fetch_assoc($result4);
-
-
 ?>
 
 
 
-
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <head>
-  <title>Rijwan Music Store | Details</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rijwan Music Store | Success Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="js/script.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/nav.js"></script>
 <script type="text/javascript" src="js/nav-hover.js"></script>
 <script type="text/javascript">
@@ -82,102 +43,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header">
 		<div class="header_top">
 			<div class="logo">
-				<a href="#"><img src="images/rmslogo.jpg" alt="" /></a>
+				<a href="index.php"><img src="images/rmslogo.jpg" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
-
-			    <div class="shopping_cart">
-					<div class="cart">
-						<a href="cart.php?action=view" title="View my shopping cart" rel="nofollow">
-							<strong class="opencart"> </strong>
-								<span class="cart_title">Cart</span>
-									<span class="no_product">(<?php if ($row4['cart_qty']>0)echo  @$row4['cart_qty']; else echo "Empty";?>)</span>
-							</a>
-						</div>
-			      </div>
-	     <div class="languages">
-	    	<div id="language" class="wrapper-dropdown" tabindex="1">EN
-						<strong class="opencart"> </strong>
-						<ul class="dropdown languges">
-							 <li>
-							 	<a href="#" title="Français">
-									<span><img src="images/gb.png" alt="en" width="26" height="26"></span><span class="lang">English</span>
-								</a>
-							 </li>
-
-				   </ul>
-		     </div>
-		     <script type="text/javascript">
-			function DropDown(el) {
-				this.dd = el;
-				this.initEvents();
-			}
-			DropDown.prototype = {
-				initEvents : function() {
-					var obj = this;
-
-					obj.dd.on('click', function(event){
-						$(this).toggleClass('active');
-						event.stopPropagation();
-					});
-				}
-			}
-
-			$(function() {
-
-				var dd = new DropDown( $('#language') );
-
-				$(document).click(function() {
-					// all dropdowns
-					$('.wrapper-dropdown').removeClass('active');
-				});
-
-			});
-
-		</script>
-		 </div>
-			<div class="currency">
-					<div id="currency" class="wrapper-dropdown" tabindex="1">RM
-						<strong class="opencart"> </strong>
-						<ul class="dropdown">
-							<li><a href="#"><span>RM</span>MYR</a></li>
-							<li><a href="#"><span>€</span>Euro</a></li>
-						</ul>
-					</div>
-					 <script type="text/javascript">
-			function DropDown(el) {
-				this.dd = el;
-				this.initEvents();
-			}
-			DropDown.prototype = {
-				initEvents : function() {
-					var obj = this;
-
-					obj.dd.on('click', function(event){
-						$(this).toggleClass('active');
-						event.stopPropagation();
-					});
-				}
-			}
-
-			$(function() {
-
-				var dd = new DropDown( $('#currency') );
-
-				$(document).click(function() {
-					// all dropdowns
-					$('.wrapper-dropdown').removeClass('active');
-				});
-
-			});
-
-		</script>
-   </div>
 			<div class="clear"></div>
 	   </div>
 	 <div class="clear"></div>
    </div>
-	<div class="menu">
+
+    <div class="menu">
 	  <ul id="dc_mega-menu-orange" class="dc_mm-orange">
 		 <li><a href="index.php">Home</a></li>
     <li><a href="product.php">Products</a>
@@ -214,7 +88,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     </ul>
   </li>
- <li><a href="about.php">About</a></li>
+
+   <li><a href="about.php">About</a></li>
   <li><a href="orderstatus.php">Order Status</a></li>
   <li><a href="faq.php">FAQS</a></li>
   <li><a href="contact.php">Contact</a> </li>
@@ -223,15 +98,60 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
  </div>
 
+ <div class="main">
+    <div class="content">
 
 
 
- <?php include"productdetails.php" ?>
 
 
 
 
-  <div class="footer">
+
+
+
+       <!--START BODY ELSE--><form Method ="POST" Action ="" name="frmStatus" id="frmStatus">
+
+
+
+
+ <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" >
+ <tr>
+ <td colspan="2" align="left" bgcolor="#CCCCCC"><font color="#000099"><b>Your order was successful!</b></font></td>
+ </tr>
+  <?php
+    if (isset($_GET['orderId']) && isset($_GET['custName'])) {
+  ?>
+<tr>
+
+            <td width="250px"  >Invoice ID /Order ID</td>
+            <td> <?php echo $_GET['orderId']; ?> </td>
+             </tr>
+            <td width="250px"  >Your First Name</td>
+          <td> <?php echo $_GET['custName']; ?> </td>
+        </tr>
+      <?php
+}
+       ?>
+    </table>
+
+
+</form>
+<?php
+if ( isset( $_POST['btnStep1'] ) ) {
+
+require_once 'include/getorderstatus.php';
+
+
+ }
+
+
+?>
+ <div class="clear"></div>
+    </div>
+ </div>
+</div>
+   <div class="footer">
    	  <div class="wrapper">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
@@ -285,5 +205,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   </div>
      </div>
     </div>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+	 		};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 </body>
 </html>

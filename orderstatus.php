@@ -155,7 +155,7 @@ $veriuser = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : 0;
 
     <div class="menu">
 	  <ul id="dc_mega-menu-orange" class="dc_mm-orange">
-		 <li><a href="index">Home</a></li>
+		 <li><a href="index.php">Home</a></li>
     <li><a href="product.php">Products</a>
 
     <ul>

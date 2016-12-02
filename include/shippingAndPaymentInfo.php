@@ -1,80 +1,67 @@
-
 <?php
-
-
 if (!defined('WEB_ROOT')
     || !isset($_GET['step']) || (int)$_GET['step'] != 1) {
 	exit;
 }
-
 $errorMessage = '&nbsp;';
-
 ?>
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
-
-
-
-
 </head>
-
-
 <body id="top">
 
 <p id="errorMessage"><?php echo $errorMessage; ?></p>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>?step=2" method="post" name="frmCheckout" id="frmCheckout" onSubmit="return checkShippingAndPaymentInfo();">
     <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" class="entryTable">
-    
-    
-    <tr> 
+    <tr>
             <td width="150" class="label" bgcolor="#FF0000" ><b>Email Address</b></td>
             <td class="content"><input name="txtEmail" type="text" class="box" id="txtEmail" size="40" maxlength="50"></td>
         </tr>
-  
-
-  
-        <tr class="entryTableHeader"> 
+        <tr class="entryTableHeader">
             <td colspan="2"  bgcolor="#FF6633">
               <br />Shipping Information</td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label" bgcolor= >First Name</td>
             <td class="content"><input name="txtShippingFirstName" type="text" class="box" id="txtShippingFirstName" size="30" maxlength="50"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Last Name</td>
             <td class="content"><input name="txtShippingLastName" type="text" class="box" id="txtShippingLastName" size="30" maxlength="50"></td>
         </tr>
-        <tr> 
+        <!-- <tr>
+            <td width="150" class="label">Nick Name</td>
+            <td class="content"><input name="txtShippingNickName" type="text" class="box" id="txtShippingNickName" size="30" maxlength="50"></td>
+        </tr> -->
+        <tr>
             <td width="150" class="label">Address1</td>
             <td class="content"><input name="txtShippingAddress1" type="text" class="box" id="txtShippingAddress1" size="50" maxlength="100"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Address2</td>
             <td class="content"><input name="txtShippingAddress2" type="text" class="box" id="txtShippingAddress2" size="50" maxlength="100"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Phone Number</td>
             <td class="content"><input name="txtShippingPhone" type="text" class="box" id="txtShippingPhone" size="30" maxlength="32"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Province / State</td>
             <td class="content"><input name="txtShippingState" type="text" class="box" id="txtShippingState" size="30" maxlength="32"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">City</td>
             <td class="content"><input name="txtShippingCity" type="text" class="box" id="txtShippingCity" size="30" maxlength="32"></td>
-            
+
         </tr>
-        
-         <tr> 
+
+         <tr>
             <td width="150" class="label">Country</td>
             <td class="content">
             <select name="txtShippingCountry">
-   <option value="MY(ZONE1)" selected>Malaysia(ZONE1)</option>
+    <option value="MY(ZONE1)" selected>Malaysia(ZONE1)</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>
     <option value="DZ">Algeria</option>
@@ -208,8 +195,7 @@ $errorMessage = '&nbsp;';
     <option value="MY(ZONE1)">Malaysia(ZONE1)</option>
     <option value="MY(ZONE2)">Malaysia(ZONE2)</option>
     <option value="MY(ZONE3)">Malaysia(ZONE3)</option>
-   <option value="MY(ZONE4)">Malaysia(ZONE4)</option>
-
+    <option value="MY(ZONE4)">Malaysia(ZONE4)</option>
     <option value="MV">Maldives</option>
     <option value="ML">Mali</option>
     <option value="MT">Malta</option>
@@ -258,12 +244,12 @@ $errorMessage = '&nbsp;';
     <option value="RO">Romania</option>
     <option value="RU">Russian Federation</option>
     <option value="RW">Rwanda</option>
-    <option value="KN">Saint Kitts and Nevis</option> 
+    <option value="KN">Saint Kitts and Nevis</option>
     <option value="LC">Saint LUCIA</option>
     <option value="VC">Saint Vincent and the Grenadines</option>
     <option value="WS">Samoa</option>
     <option value="SM">San Marino</option>
-    <option value="ST">Sao Tome and Principe</option> 
+    <option value="ST">Sao Tome and Principe</option>
     <option value="SA">Saudi Arabia</option>
     <option value="SN">Senegal</option>
     <option value="SC">Seychelles</option>
@@ -318,61 +304,57 @@ $errorMessage = '&nbsp;';
     <option value="YU">Yugoslavia</option>
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
-</select>
-            
-            
-            
-            </td>
-            
-        </tr>
-        <tr> 
+  </select>
+
+  </td>
+  </tr>
+        <tr>
             <td width="150" class="label">Postal / Zip Code</td>
             <td class="content"><input name="txtShippingPostalCode" type="text" class="box" id="txtShippingPostalCode" size="10" maxlength="10"></td>
         </tr>
     </table>
+
     <p>&nbsp;</p>
     <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" class="entryTable">
-        <tr class="entryTableHeader"> 
+        <tr class="entryTableHeader">
             <td width="150"  bgcolor="#FF6633">Payment Information</td>
-            <td bgcolor="#FF6633"><input type="checkbox" name="chkSame" id="chkSame" value="checkbox" onClick="setPaymentInfo(this.checked);"> 
+            <td bgcolor="#FF6633"><input type="checkbox" name="chkSame" id="chkSame" value="checkbox" onClick="setPaymentInfo(this.checked);">
                 <label for="chkSame" style="cursor:pointer" >Same as Shipping Information</label></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">First Name</td>
             <td class="content"><input name="txtPaymentFirstName" type="text" class="box" id="txtPaymentFirstName" size="30" maxlength="50"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Last Name</td>
             <td class="content"><input name="txtPaymentLastName" type="text" class="box" id="txtPaymentLastName" size="30" maxlength="50"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Address1</td>
             <td class="content"><input name="txtPaymentAddress1" type="text" class="box" id="txtPaymentAddress1" size="50" maxlength="100"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Address2</td>
             <td class="content"><input name="txtPaymentAddress2" type="text" class="box" id="txtPaymentAddress2" size="50" maxlength="100"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Phone Number</td>
             <td class="content"><input name="txtPaymentPhone" type="text" class="box" id="txtPaymentPhone" size="30" maxlength="32"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">Province / State</td>
             <td class="content"><input name="txtPaymentState" type="text" class="box" id="txtPaymentState" size="30" maxlength="32"></td>
         </tr>
-        <tr> 
+        <tr>
             <td width="150" class="label">City</td>
             <td class="content"><input name="txtPaymentCity" type="text" class="box" id="txtPaymentCity" size="30" maxlength="32"></td>
         </tr>
-        
-        
-           <tr> 
+        <tr>
             <td width="150" class="label">Country</td>
             <td class="content">
             <select name="txtPaymentCountry">
-                     
-<option value="MY(ZONE1)" selected>Malaysia(ZONE1)</option>
+
+    <option value="MY(ZONE1)" selected>Malaysia(ZONE1)</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>
     <option value="DZ">Algeria</option>
@@ -504,10 +486,9 @@ $errorMessage = '&nbsp;';
     <option value="MG">Madagascar</option>
     <option value="MW">Malawi</option>
     <option value="MY(ZONE1)">Malaysia(ZONE1)</option>
- 
     <option value="MY(ZONE2)">Malaysia(ZONE2)</option>
     <option value="MY(ZONE3)">Malaysia(ZONE3)</option>
-   <option value="MY(ZONE4)">Malaysia(ZONE4)</option>
+    <option value="MY(ZONE4)">Malaysia(ZONE4)</option>
     <option value="MV">Maldives</option>
     <option value="ML">Mali</option>
     <option value="MT">Malta</option>
@@ -556,12 +537,12 @@ $errorMessage = '&nbsp;';
     <option value="RO">Romania</option>
     <option value="RU">Russian Federation</option>
     <option value="RW">Rwanda</option>
-    <option value="KN">Saint Kitts and Nevis</option> 
+    <option value="KN">Saint Kitts and Nevis</option>
     <option value="LC">Saint LUCIA</option>
     <option value="VC">Saint Vincent and the Grenadines</option>
     <option value="WS">Samoa</option>
     <option value="SM">San Marino</option>
-    <option value="ST">Sao Tome and Principe</option> 
+    <option value="ST">Sao Tome and Principe</option>
     <option value="SA">Saudi Arabia</option>
     <option value="SN">Senegal</option>
     <option value="SC">Seychelles</option>
@@ -617,58 +598,37 @@ $errorMessage = '&nbsp;';
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
 </select>
-            
-            
-            
-            </td>
-            
+        </td>
         </tr>
-        <tr> 
+
+        <tr>
             <td width="150" class="label">Postal / Zip Code</td>
             <td class="content"><input name="txtPaymentPostalCode" type="text" class="box" id="txtPaymentPostalCode" size="10" maxlength="10"></td>
         </tr>
     </table>
+
     <p>&nbsp;</p>
     <table width="550" border="0" align="center" cellpadding="5" cellspacing="1" class="entryTable">
       <tr>
         <td width="150" class="entryTableHeader" b bgcolor="#FF6633" >Payment Method </td>
         <td class="content">
         <input name="optPayment" type="radio" id="optPaypal" value="paypal" checked="checked" />
-        <label for="optPaypal" style="cursor:pointer"> Verified Paypal (Paypal Accepts All Major Credit Cards)</label>
+        <label for="optPaypal" style="cursor:pointer">Paypal (Accepts All Credit Cards)</label>
         <br />
         <input name="optPayment" type="radio" value="cod" id="optCod" />
-       
-        <label for="optCod" style="cursor:pointer">Cash on Delivery</label> 
-        
-        
+        <label for="optCod" style="cursor:pointer">Cash on Delivery</label>
         </td>
-      </tr>
-      <tr><td></td><td><img src="images/IMGPAYMENTCHECK.jpg" /></td> </tr>
+        <tr>
+          <td><img src="images/IMGPAYMENTCHECK.jpg"></td>
+          <td><img src="images/cod.jpg" style="width: 210px;"></td>
+        </tr>
     </table>
-    
- 
     <p>&nbsp;</p>
-    <p align="center"> 
+    <p align="center">
         <input class="box" name="btnStep1" type="submit" id="btnStep1" value="Proceed &gt;&gt;">
     </p>
 </form>
-
-
-
-</div></div>
-
-
-
-<!-- ####################################################################################################### -->
-
-
-<!-- ####################################################################################################### -->
-
-
-
-
-
-
-
+</div>
+</div>
 </body>
 </html>

@@ -19,16 +19,14 @@ if (isCartEmpty()) {
 		$pageTitle   = 'Checkout - Step 2 of 2';
 	} else if ($step == 3) {
 		$orderId     = saveOrder();
+		$order = getOrder($orderId);
 		$orderAmount = getOrderAmount($orderId);
-
-		$_SESSION['orderId'] = $orderId;
-
 		// our next action depends on the payment method
 		// if the payment method is COD then show the
 		// success page but when paypal is selected
 		// send the order details to paypal
 		if ($_POST['hidPaymentMethod'] == 'cod') {
-			header('Location: index.php');
+			header('Location: success.php?orderId='.$order[0].'&custName='.$order[6]);
 			exit;
 		} else {
 			$includeFile = 'paypal/payment.php';

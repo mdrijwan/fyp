@@ -8,10 +8,10 @@
 
 $paypal = array();
 
-$paypal['business']      = "ypccetech@hotmail.com";
+$paypal['business']      = "payment@rms.com";
 //sandbox paypal payment id
 //$paypal['business']      = "ypccetech-facilitator@hotmail.com";
-$paypal['site_url']      = "http://www.everblazingcreation.com/";
+$paypal['site_url']      = "index.php";
 $paypal['image_url']     = "";
 $paypal['success_url']   = "success.php";
 $paypal['cancel_url']    = "error.php";
@@ -72,14 +72,14 @@ $paypal['phone_3']   = isset($_POST['phone3']) ? $_POST['phone3']: "";
 
 /********************************************************************************
 *
-*                           PAYPAL FUNCTIONS 
+*                           PAYPAL FUNCTIONS
 *
 ********************************************************************************/
 
 //create variable names to perform additional order processing
 
-function create_local_variables() 
-{ 
+function create_local_variables()
+{
 	$array_name = array();
 	$array_name['business'] = $_POST['business'];
 	$array_name['receiver_email'] = $_POST['receiver_email'];
@@ -130,123 +130,123 @@ function create_local_variables()
 	$array_name['payer_status'] = $_POST['payer_status'];
 	$array_name['notify_version'] = $_POST['notify_version'];
 	$array_name['verify_sign'] = $_POST['verify_sign'];
-	 
-	return $array_name; 
+
+	return $array_name;
 }
 
 
-//this function creates a comma separated value file from an array. 
+//this function creates a comma separated value file from an array.
 
-function create_csv_file($file,$data) 
+function create_csv_file($file,$data)
 {
 	// the return value
 	$success = false;
-	
+
 	//check for array
-	if (is_array($data)) { 
-		$post_values = array_values($data); 
-		
+	if (is_array($data)) {
+		$post_values = array_values($data);
+
 		//build csv data
-		foreach ($post_values as $i) { 
-			$csv.="\"$i\","; 
+		foreach ($post_values as $i) {
+			$csv.="\"$i\",";
 		}
-		
+
 		//remove the last comma from string
-		$csv = substr($csv,0,-1); 
-		
+		$csv = substr($csv,0,-1);
+
 		//check for existence of file
-		if(file_exists($file) && is_writeable($file)) { 
-			$mode="a"; 
-		} else { 
-			$mode="w"; 
+		if(file_exists($file) && is_writeable($file)) {
+			$mode="a";
+		} else {
+			$mode="w";
 		}
-		
+
 		//create file pointer
 		$fp=@fopen($file,$mode);
-		 
+
 		//write to file
-		fwrite($fp,$csv . "\n"); 
-		
+		fwrite($fp,$csv . "\n");
+
 		//close file pointer
-		fclose($fp); 
-		
-		$success = true; 
-	} 
-	
-	return $success;	 
+		fclose($fp);
+
+		$success = true;
+	}
+
+	return $success;
 }
 
-//posts transaction data using fsockopen. 
-function fsockPost($url,$data) 
-{ 
+//posts transaction data using fsockopen.
+function fsockPost($url,$data)
+{
 	$postData = '';
-	
+
 	// return value
 	$info = '';
-	
-	//Parse url 
-	$web=parse_url($url); 
-	
-	//build post string 
-	foreach ($data as $i=>$v) { 
-		$postData.= $i . "=" . urlencode($v) . "&"; 
+
+	//Parse url
+	$web=parse_url($url);
+
+	//build post string
+	foreach ($data as $i=>$v) {
+		$postData.= $i . "=" . urlencode($v) . "&";
 	}
-	
+
 	// we must append cmd=_notify-validate to the POST string
 	// so paypal know that this is a confirmation post
 	$postData .= "cmd=_notify-validate";
-	
-	//Set the port number
-	if ($web['scheme'] == "https") { 
-		$web['port'] = "443";  
-		$ssl       = "ssl://"; 
-	} else { 
-		$web['port'] = "80"; 
-		$ssl       = "";
-	}  
-	
-	//Create paypal connection
-	$fp = @fsockopen($ssl . $web[host], $web[port], $errnum, $errstr,30); 
-	
-	//Error checking
-	if(!$fp) { 
-		echo "$errnum: $errstr"; 
-	} else { 
-		//Post Data
-		fputs($fp, "POST $web[path] HTTP/1.1\r\n"); 
-		fputs($fp, "Host: $web[host]\r\n"); 
-		fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n"); 
-		fputs($fp, "Content-length: ".strlen($postData)."\r\n"); 
-		fputs($fp, "Connection: close\r\n\r\n"); 
-		fputs($fp, $postData . "\r\n\r\n"); 
-	
-		// loop through the response from the server 
-		$info = array();
-		while (!feof($fp)) { 
-			$info[] = @fgets($fp, 1024); 
-		} 
-		
-		//close fp - we are done with it 
-		fclose($fp); 
-		
-		// join the results into a string separated by comma
-		$info = implode(",", $info); 
-		
-	}
-	
-	return $info; 
 
-} 
+	//Set the port number
+	if ($web['scheme'] == "https") {
+		$web['port'] = "443";
+		$ssl       = "ssl://";
+	} else {
+		$web['port'] = "80";
+		$ssl       = "";
+	}
+
+	//Create paypal connection
+	$fp = @fsockopen($ssl . $web[host], $web[port], $errnum, $errstr,30);
+
+	//Error checking
+	if(!$fp) {
+		echo "$errnum: $errstr";
+	} else {
+		//Post Data
+		fputs($fp, "POST $web[path] HTTP/1.1\r\n");
+		fputs($fp, "Host: $web[host]\r\n");
+		fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");
+		fputs($fp, "Content-length: ".strlen($postData)."\r\n");
+		fputs($fp, "Connection: close\r\n\r\n");
+		fputs($fp, $postData . "\r\n\r\n");
+
+		// loop through the response from the server
+		$info = array();
+		while (!feof($fp)) {
+			$info[] = @fgets($fp, 1024);
+		}
+
+		//close fp - we are done with it
+		fclose($fp);
+
+		// join the results into a string separated by comma
+		$info = implode(",", $info);
+
+	}
+
+	return $info;
+
+}
 
 //Display Paypal Hidden Variables
 
 function showVariables() {
-	global $paypal; 
-?> 
+	global $paypal;
+?>
 
-<!-- PayPal Configuration --> 
-<input type="hidden" name="business" value="<?php echo $paypal['business']?>"> 
-<input type="hidden" name="cmd" value="<?php echo $paypal['cmd']?>"> 
+<!-- PayPal Configuration -->
+<input type="hidden" name="business" value="<?php echo $paypal['business']?>">
+<input type="hidden" name="cmd" value="<?php echo $paypal['cmd']?>">
 <input type="hidden" name="image_url" value="<?php echo  "{$paypal['site_url']}{$paypal['image_url']}"; ?>">
 <input type="hidden" name="return" value="<?php echo  "{$paypal['site_url']}{$paypal['success_url']}"; ?>">
 <input type="hidden" name="cancel_return" value="<?php echo  "{$paypal['site_url']}{$paypal['cancel_url']}"; ?>">
@@ -257,16 +257,16 @@ function showVariables() {
 <input type="hidden" name="bn" value="<?php echo $paypal['bn']?>">
 <input type="hidden" name="cbt" value="<?php echo $paypal['continue_button_text']?>">
 
-<!-- Payment Page Information --> 
+<!-- Payment Page Information -->
 <input type="hidden" name="no_shipping" value="<?php echo $paypal['display_shipping_address']?>">
 <input type="hidden" name="no_note" value="<?php echo $paypal['display_comment']?>">
-<input type="hidden" name="cn" value="<?php echo $paypal['comment_header']?>"> 
+<input type="hidden" name="cn" value="<?php echo $paypal['comment_header']?>">
 <input type="hidden" name="cs" value="<?php echo $paypal['background_color']?>">
 
-<!-- Product Information --> 
+<!-- Product Information -->
 <input type="hidden" name="item_name" value="<?php echo $paypal['item_name']?>">
 <input type="hidden" name="amount" value="<?php echo $paypal['amount']?>">
-<input type="hidden" name="quantity" value="<?php echo $paypal['quantity']?>"> 
+<input type="hidden" name="quantity" value="<?php echo $paypal['quantity']?>">
 <input type="hidden" name="item_number" value="<?php echo $paypal['item_number']?>">
 <input type="hidden" name="undefined_quantity" value="<?php echo $paypal['edit_quantity']?>">
 <input type="hidden" name="on0" value="<?php echo $paypal['on0']?>">
@@ -274,7 +274,7 @@ function showVariables() {
 <input type="hidden" name="on1" value="<?php echo $paypal['on1']?>">
 <input type="hidden" name="os1" value="<?php echo $paypal['os1']?>">
 
-<!-- Shipping and Misc Information --> 
+<!-- Shipping and Misc Information -->
 <input type="hidden" name="shipping" value="<?php echo $paypal['shipping_amount']?>">
 <input type="hidden" name="shipping2" value="<?php echo $paypal['shipping_amount_per_item']?>">
 <input type="hidden" name="handling" value="<?php echo $paypal['handling_amount']?>">
@@ -282,19 +282,19 @@ function showVariables() {
 <input type="hidden" name="custom" value="<?php echo $paypal['custom_field']?>">
 <input type="hidden" name="invoice" value="<?php echo $paypal['invoice']?>">
 
-<!-- Customer Information --> 
-<input type="hidden" name="first_name" value="<?php echo $paypal['firstname']?>"> 
-<input type="hidden" name="last_name" value="<?php echo $paypal['lastname']?>"> 
-<input type="hidden" name="address1" value="<?php echo $paypal['address1']?>"> 
-<input type="hidden" name="address2" value="<?php echo $paypal['address2']?>"> 
-<input type="hidden" name="city" value="<?php echo $paypal['city']?>"> 
-<input type="hidden" name="state" value="<?php echo $paypal['state']?>"> 
-<input type="hidden" name="zip" value="<?php echo $paypal['zip']?>"> 
-<input type="hidden" name="email" value="<?php echo $paypal['email']?>"> 
-<input type="hidden" name="night_phone_a" value="<?php echo $paypal['phone_1']?>"> 
-<input type="hidden" name="night_phone_b" value="<?php echo $paypal['phone_2']?>"> 
-<input type="hidden" name="night_phone_c" value="<?php echo $paypal['phone_3']?>"> 
+<!-- Customer Information -->
+<input type="hidden" name="first_name" value="<?php echo $paypal['firstname']?>">
+<input type="hidden" name="last_name" value="<?php echo $paypal['lastname']?>">
+<input type="hidden" name="address1" value="<?php echo $paypal['address1']?>">
+<input type="hidden" name="address2" value="<?php echo $paypal['address2']?>">
+<input type="hidden" name="city" value="<?php echo $paypal['city']?>">
+<input type="hidden" name="state" value="<?php echo $paypal['state']?>">
+<input type="hidden" name="zip" value="<?php echo $paypal['zip']?>">
+<input type="hidden" name="email" value="<?php echo $paypal['email']?>">
+<input type="hidden" name="night_phone_a" value="<?php echo $paypal['phone_1']?>">
+<input type="hidden" name="night_phone_b" value="<?php echo $paypal['phone_2']?>">
+<input type="hidden" name="night_phone_c" value="<?php echo $paypal['phone_3']?>">
 
-<?php 
-} 
+<?php
+}
 ?>
