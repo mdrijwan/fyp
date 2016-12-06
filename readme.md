@@ -36,8 +36,8 @@ There are two main section in the zip folder extracted earlier, these are User s
 **Admin Side**
 
 * Go to Link like `http://localhost/fyp/admin/index.php`
-Username: adim
-Password: password
+>Username: admin
+>Password: password
 
 * Click Category: I have specified Default Categories such as Keyboard, Guitar, Recording, Computer Audio and so forth. You can choose any category and add sub-caterory as you wish, it will be reflected to the user side website afterwards.
 
