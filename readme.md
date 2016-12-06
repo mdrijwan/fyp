@@ -4,20 +4,20 @@
 
 # Basic Instruction for Configuration
 
-This is a client-server based programme, therefore, you have to run it with  software like Xampp
+This is a client-server based programme; therefore, you have to run it with software like XAMPP or MAMP.
 
 * Please Extract the Zip File (`fyp.rar) or clone the repo.
-* Get a Xampp Software and add the extracted zip file to you `htdocs` folder
+* Get a Xampp Software and add the extracted zip file to you `htdocs` folder.
 
 ## Database Configuration
 
-* Locate the file `rijwan_fyp`
-* Import that `.sql` file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while naming my database as `rijwan_fyp`, therefore, it is advisable to name your same way,
-* Once done you should see the list of tables in your database, A typical example  is "category_group"
+* Locate the file `rijwan_fyp`.
+* Import that `.sql` file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while naming my database as `rijwan_fyp`, therefore, it is advisable to name your same way.
+* Once done you should see the list of tables in your database, A typical example  is "category_group".
 
->Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`
+>Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`.
 
-* Cretae the connection.php and name it accordingly which can be found under `Connections` folder
+* Cretae the connection.php and name it accordingly which can be found under `Connections` folder.
 * Then locate this line where the hostname and database will be defined. 
 
 ```
@@ -43,7 +43,7 @@ Password: password
 
 >Example : Under 'Keyboard' Category, I Added 'Keyboard Stand' as a product on web page.
 
-* Click Product: You can choose the category you just created and follow the page for adding product
+* Click Product: You can choose the category you just created and follow the page for adding product.
 
 ### Important Field
 
@@ -55,10 +55,10 @@ The rest can be filled as desired.
 
 * Click Order: This allows to check order status in details.
 
-* Edit Shipping : This allows to specify the country that you want to ship online. e.g. 'Yes' (Shipping is available to that country) and 'No' (Shipmping is not available to that country). e.g. typical example of yes is "Malaysia Zone 1"
+* Edit Shipping : This allows to specify the country that you want to ship online. e.g. 'Yes' (Shipping is available to that country) and 'No' (Shipmping is not available to that country). e.g. typical example of yes is "Malaysia Zone 1".
 
 ## Conclusion
-Everything is working nicely and all the functional requiremnts have been fulfilled
+Everything is working nicely and all the functional requiremnts have been fulfilled according to the proposal.
 
 >Designed with the help of Adobe Dreamweaver for some parts.
 
