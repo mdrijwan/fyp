@@ -66,4 +66,10 @@ Everything is working nicely and all the functional requiremnts have been fulfil
 
 **Md Rijwan Razzaq Matin | All Rights Reserved**
 
-![RMS Logo](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg?style=centerme)
+
+<div style="text-align:center" markdown="1">
+
+![Alt Text](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg "Caption")
+
+</div>
+
