@@ -1,4 +1,5 @@
-**Welcome to RIJWAN MUSIC STORE**
+**Welcome to RIJWAN MUSIC STORE, a full-fledged ecommerce website**
+
 ![Rijwan Music Store](https://github.com/mdrijwan/fyp/blob/master/FYP_site.jpg)
 
 # Basic Instruction for Configuration
