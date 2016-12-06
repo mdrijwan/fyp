@@ -16,9 +16,10 @@ This is a client-server based programme, therefore, you have to run it with  sof
 * Cretae the connection.php and name it accordingly which can be found under `Connections` folder
 * Then locate this line where the hostname and database will be defined. 
 
+```
 @mysql_connect ("localhost", "root", "")
 @mysql_select_db ("rijwan_fyp")
-
+```
 ### Using Web
 
 There are two main section in the zip folder extracted earlier, these are User side and the Admin side.
