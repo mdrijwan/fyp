@@ -1,65 +1,60 @@
-# Basic Instruction for file configuration
+# Basic Instruction for Configuration
 
-This is a server plus client base programme, therefore, you have to run it with  software like Xampp
+This is a client-server based programme, therefore, you have to run it with  software like Xampp
 
-1. Please Extract the Zip File
-2. Get a Xampp Software and add the extracted zip file to you HTDOCS folder
+* Please Extract the Zip File
+* Get a Xampp Software and add the extracted zip file to you HTDOCS folder
 
-**Database Configuration**
+## Database Configuration
 
-3. Locate the file `rijwan_fyp`
-4. Import that `.sql` file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while naming my database as `rijwan_fyp`, therefore, it is advisable to name your same way,
-5. Once done you should see the list of tables in your database, A typical example  is "category_group"
+* Locate the file `rijwan_fyp`
+* Import that `.sql` file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while naming my database as `rijwan_fyp`, therefore, it is advisable to name your same way,
+* Once done you should see the list of tables in your database, A typical example  is "category_group"
 
 >Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`
 
-6. Please locate this line
+* Please locate this line
 @mysql_connect ("localhost", "root", "")
 @mysql_select_db ("rijwan_fyp")
 
 Then you are through with database configuration for the website.
 
-## Using Web
+### Using Web
 
 There are two main section in the zip folder extracted earlier, these are User side and the Admin side.
 
-Users Side
-1. Locate you index page through web browser, example `http://localhost/fyp/index.php`
-2.  Click on `Enter RMS` to browse through cleaance items. All the products can be found under "Products" drop down menu.
+**Users Side**
 
-Admin Side
-1. Go to Link like `http://localhost/fypadmin/index.php`
-Username:adim
-Password:password
-2. Click Category: I have Specify Default Category such as Keyboard, Guitar, recording, computer audio and so forth, please choose any category  and
-add sub caterory, this will be notice from you user side website after sucessful-
+* Locate you index page through web browser, example `http://localhost/fyp/index.php`
+* Click on `Enter RMS` to browse through clearance Items. All the products can be found under "Products" drop down menu.
 
-Example : Under Keyboard, I Added Keyboard Stand as appear  on web page.
+**Admin Side**
 
-3. Click Product: please choose the category you just created and follow the page for adding product
+* Go to Link like `http://localhost/fyp/admin/index.php`
+Username: adim
+Password: password
 
-Important Feild
+* Click Category: I have specified Default Categories such as Keyboard, Guitar, Recording, Computer Audio and so forth. You can choose any category and add sub-caterory as you wish, it will be reflected to the user side website afterwards.
 
-Category, Name of product, Product Code,  Description (Your full product description), Price, Weight, Quantity, Image (Select Product image from
-anywhere you save it), Specification 1(This is short description under product display on web).
+>Example : Under 'Keyboard' Category, I Added 'Keyboard Stand' as a product on web page.
 
-The rest can be feel any how you want.
+* Click Product: You can choose the category you just created and follow the page for adding product
 
-4. After complete form, Submit and it should appear on you website.
+### Important Field
 
-5. Click Order: this allow you to check who order from you though it is not online, it may not that active. but try to complete one order as it will
-redirect you to use paypal payment method, then order  info of user will be available to you
+Category, Name of Product, Product Code,  Description (This is the full description under product display on web), Price, Weight, Quantity, Image (Select Product image from ../images/products), Specification 1 (This is short description under product display on web).
 
-6. Edit Shipping : please use that sectiong to specify  the country that you want to ship online too, Yes is (shipment is available to that country
-and No is not available to that country) typical example of yes is "malaysia Zone 1"
+The rest can be filled as desired.
 
-7. Everything mension are important criterial regarding admin side, please feel free to navigate through.
+* After completing the form, Submit and it should appear on the website.
 
-*Conclusion*
+* Click Order: This allows to check order status in details.
 
-Please browse through webpage to understand how it works, try to purchase an item, though  there can be few error as no system is perfect but i have
-make sure that the system is design with limited error.
+* Edit Shipping : This allows to specify the country that you want to ship online. e.g. 'Yes' (Shipping is available to that country) and 'No' (Shipmping is not available to that country). e.g. typical example of yes is "malaysia Zone 1"
 
+## Conclusion
+Everything is working nicely and all the functional requiremnts have been fulfilled
 
-Designed with the help of Adobe Dreamweaver
-Md Rijwan Razzaq Matin | All Rights Reserved
+>Designed with the help of Adobe Dreamweaver for some parts.
+
+**Md Rijwan Razzaq Matin | All Rights Reserved**
