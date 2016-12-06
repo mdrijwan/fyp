@@ -66,4 +66,4 @@ Everything is working nicely and all the functional requiremnts have been fulfil
 
 **Md Rijwan Razzaq Matin | All Rights Reserved**
 
-<div style="text-align:center"><img src ="https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg" /></div>
+![RMS Logo](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg?style=centerme)
