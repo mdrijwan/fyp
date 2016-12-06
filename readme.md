@@ -1,3 +1,6 @@
+**Welcome to RIJWAN MUSIC STORE**
+![Rijwan Music Store](https://github.com/mdrijwan/fyp/blob/master/FYP_site.jpg)
+
 # Basic Instruction for Configuration
 
 This is a client-server based programme, therefore, you have to run it with  software like Xampp
