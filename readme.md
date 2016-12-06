@@ -1,17 +1,17 @@
-**Basic Instruction for file configuration**
+# Basic Instruction for file configuration
 
 This is a server plus client base programme, therefore, you have to run it with  software like Xampp
 
 1. Please Extract the Zip File
 2. Get a Xampp Software and add the extracted zip file to you HTDOCS folder
 
-Database Configuration
+**Database Configuration**
 
-3. Locate  file `rijwan_fyp`
-4. Import that .sql file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while  name my database `rijwan_fyp`, therefore, it is advisable to name your same way,
-5. Once done you should see list of table understand you database, A typical example  is "category_group"
+3. Locate the file `rijwan_fyp`
+4. Import that `.sql` file into your database using PHP Admin or other means, Note that in my case, i use xampp software, while naming my database as `rijwan_fyp`, therefore, it is advisable to name your same way,
+5. Once done you should see the list of tables in your database, A typical example  is "category_group"
 
->Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than everblaz_etech
+>Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`
 
 6. Please locate this line
 @mysql_connect ("localhost", "root", "")
@@ -19,15 +19,13 @@ Database Configuration
 
 Then you are through with database configuration for the website.
 
-Using Web
+## Using Web
 
-There are two main section in the zip folder extracted earlier, these are  user side and the Admin side.
+There are two main section in the zip folder extracted earlier, these are User side and the Admin side.
 
 Users Side
-1. Locate you index page through web browser example `http://localhost/fyp/index.php`
-2.  Click on `Enter store` to browse through store and all products can find under "product" drop down menu.
->Note: product are still empty, therefore you are advise to upload all product yourself using Admin Panel
-
+1. Locate you index page through web browser, example `http://localhost/fyp/index.php`
+2.  Click on `Enter RMS` to browse through cleaance items. All the products can be found under "Products" drop down menu.
 
 Admin Side
 1. Go to Link like `http://localhost/fypadmin/index.php`
