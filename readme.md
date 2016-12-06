@@ -13,7 +13,7 @@ This is a client-server based programme, therefore, you have to run it with  sof
 
 >Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`
 
-*Cretae the connection.php and name it accordingly which can be found under `Connections` folder
+* Cretae the connection.php and name it accordingly which can be found under `Connections` folder
 * Then locate this line where the hostname and database will be defined. 
 
 @mysql_connect ("localhost", "root", "")
@@ -50,11 +50,13 @@ The rest can be filled as desired.
 
 * Click Order: This allows to check order status in details.
 
-* Edit Shipping : This allows to specify the country that you want to ship online. e.g. 'Yes' (Shipping is available to that country) and 'No' (Shipmping is not available to that country). e.g. typical example of yes is "malaysia Zone 1"
+* Edit Shipping : This allows to specify the country that you want to ship online. e.g. 'Yes' (Shipping is available to that country) and 'No' (Shipmping is not available to that country). e.g. typical example of yes is "Malaysia Zone 1"
 
 ## Conclusion
 Everything is working nicely and all the functional requiremnts have been fulfilled
 
 >Designed with the help of Adobe Dreamweaver for some parts.
+
+
 
 **Md Rijwan Razzaq Matin | All Rights Reserved**
