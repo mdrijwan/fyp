@@ -1,6 +1,6 @@
 **Welcome to RIJWAN MUSIC STORE, a full-fledged ecommerce website**
 
-![Rijwan Music Store](https://github.com/mdrijwan/fyp/blob/master/FYP_site.jpg)
+![Rijwan Music Store](https://github.com/mdrijwan/fyp/blob/master/Reports/RMS.jpg)
 
 # Basic Instruction for Configuration
 
@@ -65,3 +65,5 @@ Everything is working nicely and all the functional requiremnts have been fulfil
 
 
 **Md Rijwan Razzaq Matin | All Rights Reserved**
+
+![RMS Logo](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg)
