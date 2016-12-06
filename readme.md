@@ -69,7 +69,7 @@ Everything is working nicely and all the functional requiremnts have been fulfil
 
 <div style="text-align:center" markdown="1">
 
-![Alt Text](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg "Caption")
+![Alt Text](https://github.com/mdrijwan/fyp/blob/master/images/rmslogo.jpg)
 
 </div>
 
