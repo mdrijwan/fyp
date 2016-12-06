@@ -2,8 +2,8 @@
 
 This is a client-server based programme, therefore, you have to run it with  software like Xampp
 
-* Please Extract the Zip File
-* Get a Xampp Software and add the extracted zip file to you HTDOCS folder
+* Please Extract the Zip File (`fyp.rar) or clone the repo.
+* Get a Xampp Software and add the extracted zip file to you `htdocs` folder
 
 ## Database Configuration
 
@@ -13,11 +13,11 @@ This is a client-server based programme, therefore, you have to run it with  sof
 
 >Note: please locate config file under library and check for database configuration just in case you protect your database with password and you name your database as new name rather than `rijwan_fyp`
 
-* Please locate this line
+*Cretae the connection.php and name it accordingly which can be found under `Connections` folder
+* Then locate this line where the hostname and database will be defined. 
+
 @mysql_connect ("localhost", "root", "")
 @mysql_select_db ("rijwan_fyp")
-
-Then you are through with database configuration for the website.
 
 ### Using Web
 
