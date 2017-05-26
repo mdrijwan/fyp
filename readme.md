@@ -6,7 +6,7 @@
 
 This is a client-server based programme; therefore, you have to run it with software like XAMPP or MAMP.
 
-* Please Extract the Zip File (`fyp.rar) or clone the repo.
+* Please Extract the Zip File (`fyp.rar`) or clone the repo.
 * Get a Xampp Software and add the extracted zip file to you `htdocs` folder.
 
 ## Database Configuration
@@ -61,7 +61,7 @@ The rest can be filled as desired.
 ## Conclusion
 Everything is working nicely and all the functional requiremnts have been fulfilled according to the proposal.
 
->Designed with the help of Adobe Dreamweaver for some parts.
+>Designed with Adobe Dreamweaver for some parts.
 
 
 
